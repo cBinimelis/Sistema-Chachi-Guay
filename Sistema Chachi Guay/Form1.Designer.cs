@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_usuario = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txt_pass = new System.Windows.Forms.TextBox();
+            this.btn_ingreso = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,12 +60,17 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Chachi Guay";
             // 
-            // textBox1
+            // txt_usuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 184);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 20);
-            this.textBox1.TabIndex = 2;
+            this.txt_usuario.BackColor = System.Drawing.Color.LightCoral;
+            this.txt_usuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_usuario.ForeColor = System.Drawing.Color.MistyRose;
+            this.txt_usuario.Location = new System.Drawing.Point(12, 184);
+            this.txt_usuario.Name = "txt_usuario";
+            this.txt_usuario.Size = new System.Drawing.Size(213, 13);
+            this.txt_usuario.TabIndex = 0;
+            this.txt_usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.txt_usuario, "Ingresa tu usuario");
             // 
             // pictureBox1
             // 
@@ -75,29 +82,37 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox2
+            // txt_pass
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 210);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(213, 20);
-            this.textBox2.TabIndex = 4;
+            this.txt_pass.BackColor = System.Drawing.Color.LightCoral;
+            this.txt_pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_pass.ForeColor = System.Drawing.Color.MistyRose;
+            this.txt_pass.Location = new System.Drawing.Point(12, 210);
+            this.txt_pass.Name = "txt_pass";
+            this.txt_pass.PasswordChar = '♥';
+            this.txt_pass.Size = new System.Drawing.Size(213, 13);
+            this.txt_pass.TabIndex = 1;
+            this.txt_pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.txt_pass, "Ingresa tu contraseña");
             // 
-            // button1
+            // btn_ingreso
             // 
-            this.button1.BackColor = System.Drawing.Color.MistyRose;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.LightCoral;
-            this.button1.Location = new System.Drawing.Point(12, 237);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(213, 38);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Ingresar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_ingreso.BackColor = System.Drawing.Color.MistyRose;
+            this.btn_ingreso.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ingreso.FlatAppearance.BorderSize = 0;
+            this.btn_ingreso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_ingreso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_ingreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ingreso.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ingreso.ForeColor = System.Drawing.Color.LightCoral;
+            this.btn_ingreso.Location = new System.Drawing.Point(12, 237);
+            this.btn_ingreso.Name = "btn_ingreso";
+            this.btn_ingreso.Size = new System.Drawing.Size(213, 38);
+            this.btn_ingreso.TabIndex = 2;
+            this.btn_ingreso.Text = "Ingresar";
+            this.toolTip1.SetToolTip(this.btn_ingreso, "Confirma e ingresa");
+            this.btn_ingreso.UseVisualStyleBackColor = false;
+            this.btn_ingreso.Click += new System.EventHandler(this.btn_ingreso_Click);
             // 
             // Form1
             // 
@@ -105,19 +120,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;
             this.ClientSize = new System.Drawing.Size(237, 287);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.btn_ingreso);
+            this.Controls.Add(this.txt_pass);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_usuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(253, 326);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(253, 326);
             this.Name = "Form1";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingreso";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -128,10 +147,11 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_usuario;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txt_pass;
+        private System.Windows.Forms.Button btn_ingreso;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

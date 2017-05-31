@@ -24,7 +24,6 @@ namespace Sistema_Chachi_Guay
 
         }
 
-
         private void btn_ingreso_Click(object sender, EventArgs e)
         {
             try

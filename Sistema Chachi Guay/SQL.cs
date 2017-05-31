@@ -11,7 +11,7 @@ namespace Sistema_Chachi_Guay
 {
     class SQL
     {
-        String conexion = "Data Source=localhost;Network Library=DBMSSOCN;Initial Catalog=bd_biblioteca;User ID=sa;Password=crislyn;MultipleActiveResultSets=True";
+        String conexion = "Data Source=localhost;Initial Catalog=bd_biblioteca;User ID=sa;Password=crislyn;MultipleActiveResultSets=True";
         SqlConnection con;
 
         public SQL()

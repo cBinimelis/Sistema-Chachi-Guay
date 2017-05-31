@@ -32,6 +32,10 @@ namespace Sistema_Chachi_Guay
                 {
                     MessageBox.Show("Ingresa los datos solicitados", "Las prisas no son buenas", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
+
+                }
             }
             catch (Exception ouch)
             {

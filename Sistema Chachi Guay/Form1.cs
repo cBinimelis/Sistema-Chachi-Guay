@@ -34,20 +34,15 @@ namespace Sistema_Chachi_Guay
                 }
                 else
                 {
-
+                    Util.setF1(this);
+                    MenuCentral mc = new MenuCentral();
+                    mc.Show();
+                    this.Hide();
                 }
             }
             catch (Exception ouch)
             {
                 MessageBox.Show(ouch.Message, "Ha ocurrido algo inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("¿Desea salir de nuestro hermoso sitema?", "¿Realmente me traicionas así?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-            {
-                e.Cancel = true;
             }
         }
     }

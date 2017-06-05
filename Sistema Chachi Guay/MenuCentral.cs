@@ -16,5 +16,17 @@ namespace Sistema_Chachi_Guay
         {
             InitializeComponent();
         }
+
+        private void MenuCentral_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("¿Desea salir de nuestro hermoso sitema?", "¿Realmente me traicionas así?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                Util.getF1().Close();
+            }
+        }
     }
 }

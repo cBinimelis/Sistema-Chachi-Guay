@@ -36,13 +36,30 @@ namespace Sistema_Chachi_Guay
 
         private void pic_libros_Click(object sender, EventArgs e)
         {
-
+            SeleccionLibros sl = new SeleccionLibros();
+            sl.ShowDialog();
         }
 
         private void pic_series_Click(object sender, EventArgs e)
         {
             SeleccionSerie ss = new SeleccionSerie();
             ss.ShowDialog();
+        }
+
+        private void btn_ajustes_Click(object sender, EventArgs e)
+        {
+            Ajustes aj = new Ajustes();
+            aj.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

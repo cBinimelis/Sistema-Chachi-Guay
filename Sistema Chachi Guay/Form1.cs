@@ -30,7 +30,11 @@ namespace Sistema_Chachi_Guay
             {
                 if (txt_usuario.Text.Equals("") || txt_pass.Text.Equals(""))
                 {
-                    MessageBox.Show("Ingresa los datos solicitados", "Las prisas no son buenas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // MessageBox.Show("Ingresa los datos solicitados", "Las prisas no son buenas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Util.setF1(this);
+                    MenuCentral mc = new MenuCentral();
+                    mc.Show();
+                    this.Hide();
                 }
                 else
                 {

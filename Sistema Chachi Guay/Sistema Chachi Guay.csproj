@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ajustes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajustes.Designer.cs">
+      <DependentUpon>Ajustes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeleccionLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeleccionLibros.Designer.cs">
+      <DependentUpon>SeleccionLibros.cs</DependentUpon>
+    </Compile>
     <Compile Include="SeleccionSerie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +79,9 @@
     </Compile>
     <Compile Include="SQL.cs" />
     <Compile Include="Util.cs" />
+    <EmbeddedResource Include="Ajustes.resx">
+      <DependentUpon>Ajustes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +98,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SeleccionLibros.resx">
+      <DependentUpon>SeleccionLibros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SeleccionSerie.resx">
       <DependentUpon>SeleccionSerie.cs</DependentUpon>
     </EmbeddedResource>

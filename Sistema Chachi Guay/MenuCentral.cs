@@ -28,5 +28,21 @@ namespace Sistema_Chachi_Guay
                 Util.getF1().Close();
             }
         }
+
+        private void MenuCentral_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pic_libros_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pic_series_Click(object sender, EventArgs e)
+        {
+            SeleccionSerie ss = new SeleccionSerie();
+            ss.ShowDialog();
+        }
     }
 }

@@ -59,6 +59,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeleccionSerie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeleccionSerie.Designer.cs">
+      <DependentUpon>SeleccionSerie.cs</DependentUpon>
+    </Compile>
     <Compile Include="SQL.cs" />
     <Compile Include="Util.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -77,6 +83,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SeleccionSerie.resx">
+      <DependentUpon>SeleccionSerie.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -104,6 +113,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\Games.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\ajustes.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Logout.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\anime.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\series.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

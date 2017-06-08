@@ -65,7 +65,6 @@
             this.label1.Size = new System.Drawing.Size(374, 61);
             this.label1.TabIndex = 2;
             this.label1.Text = "¿Que Tipo de serie?";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // SeleccionSerie
             // 

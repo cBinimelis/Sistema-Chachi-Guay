@@ -1,6 +1,6 @@
 ﻿namespace Sistema_Chachi_Guay
 {
-    partial class Ajustes
+    partial class Pendientes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ajustes));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pendientes));
             this.SuspendLayout();
             // 
-            // Ajustes
+            // Pendientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -39,9 +39,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(418, 533);
             this.MinimumSize = new System.Drawing.Size(418, 533);
-            this.Name = "Ajustes";
+            this.Name = "Pendientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ajustes";
+            this.Text = "Pendientes";
             this.ResumeLayout(false);
 
         }

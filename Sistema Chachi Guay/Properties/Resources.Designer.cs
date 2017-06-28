@@ -63,6 +63,16 @@ namespace Sistema_Chachi_Guay.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _184630 {
+            get {
+                object obj = ResourceManager.GetObject("184630", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ajustes {
             get {
                 object obj = ResourceManager.GetObject("ajustes", resourceCulture);
@@ -86,6 +96,16 @@ namespace Sistema_Chachi_Guay.Properties {
         internal static System.Drawing.Bitmap Book {
             get {
                 object obj = ResourceManager.GetObject("Book", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap d815c1d4_e06a_4201_a2c5_2213b9494c94 {
+            get {
+                object obj = ResourceManager.GetObject("d815c1d4-e06a-4201-a2c5-2213b9494c94", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +156,16 @@ namespace Sistema_Chachi_Guay.Properties {
         internal static System.Drawing.Bitmap series {
             get {
                 object obj = ResourceManager.GetObject("series", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tumblr_mefszuAhUE1qky197o1_500 {
+            get {
+                object obj = ResourceManager.GetObject("tumblr_mefszuAhUE1qky197o1_500", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

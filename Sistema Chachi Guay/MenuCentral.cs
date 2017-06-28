@@ -54,8 +54,9 @@ namespace Sistema_Chachi_Guay
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-        }Avance
+            Pendientes p = new Pendientes();
+            p.ShowDialog();
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {

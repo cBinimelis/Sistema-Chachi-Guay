@@ -32,13 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuCentral));
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_ajustes = new System.Windows.Forms.Button();
             this.pic_series = new System.Windows.Forms.PictureBox();
             this.pic_peliculas = new System.Windows.Forms.PictureBox();
             this.pic_juegos = new System.Windows.Forms.PictureBox();
             this.pic_libros = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btn_ajustes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_series)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_peliculas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_juegos)).BeginInit();
@@ -54,6 +54,45 @@
             this.label1.Size = new System.Drawing.Size(255, 55);
             this.label1.TabIndex = 4;
             this.label1.Text = "Menu Principal";
+            // 
+            // button2
+            // 
+            this.button2.Image = global::Sistema_Chachi_Guay.Properties.Resources.Logout;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.Location = new System.Drawing.Point(269, 253);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(121, 43);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Cerrar Sesion";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Image = global::Sistema_Chachi_Guay.Properties.Resources._184630;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(139, 253);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 43);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Pendientes";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btn_ajustes
+            // 
+            this.btn_ajustes.Image = global::Sistema_Chachi_Guay.Properties.Resources.ajustes;
+            this.btn_ajustes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ajustes.Location = new System.Drawing.Point(12, 253);
+            this.btn_ajustes.Name = "btn_ajustes";
+            this.btn_ajustes.Size = new System.Drawing.Size(121, 43);
+            this.btn_ajustes.TabIndex = 5;
+            this.btn_ajustes.Text = "Configuracion";
+            this.btn_ajustes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_ajustes.UseVisualStyleBackColor = true;
+            this.btn_ajustes.Click += new System.EventHandler(this.btn_ajustes_Click);
             // 
             // pic_series
             // 
@@ -100,45 +139,6 @@
             this.pic_libros.TabStop = false;
             this.toolTip1.SetToolTip(this.pic_libros, "Ver biblioteca de libros");
             this.pic_libros.Click += new System.EventHandler(this.pic_libros_Click);
-            // 
-            // button2
-            // 
-            this.button2.Image = global::Sistema_Chachi_Guay.Properties.Resources.Logout;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(269, 253);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 43);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Cerrar Sesion";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Image = global::Sistema_Chachi_Guay.Properties.Resources.ajustes;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(139, 253);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 43);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Configuracion";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btn_ajustes
-            // 
-            this.btn_ajustes.Image = global::Sistema_Chachi_Guay.Properties.Resources.ajustes;
-            this.btn_ajustes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ajustes.Location = new System.Drawing.Point(12, 253);
-            this.btn_ajustes.Name = "btn_ajustes";
-            this.btn_ajustes.Size = new System.Drawing.Size(121, 43);
-            this.btn_ajustes.TabIndex = 5;
-            this.btn_ajustes.Text = "Configuracion";
-            this.btn_ajustes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_ajustes.UseVisualStyleBackColor = true;
-            this.btn_ajustes.Click += new System.EventHandler(this.btn_ajustes_Click);
             // 
             // MenuCentral
             // 

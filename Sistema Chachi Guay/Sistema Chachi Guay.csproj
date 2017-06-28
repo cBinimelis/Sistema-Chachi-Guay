@@ -63,6 +63,12 @@
     <Compile Include="MenuCentral.Designer.cs">
       <DependentUpon>MenuCentral.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pendientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pendientes.Designer.cs">
+      <DependentUpon>Pendientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeleccionLibros.cs">
@@ -87,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuCentral.resx">
       <DependentUpon>MenuCentral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pendientes.resx">
+      <DependentUpon>Pendientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -143,6 +152,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\series.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\184630.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\tumblr_mefszuAhUE1qky197o1_500.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\d815c1d4-e06a-4201-a2c5-2213b9494c94.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

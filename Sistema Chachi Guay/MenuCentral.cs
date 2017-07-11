@@ -62,5 +62,17 @@ namespace Sistema_Chachi_Guay
         {
             this.Close();
         }
+
+        private void pic_peliculas_Click(object sender, EventArgs e)
+        {
+            SeleccionPeliculas sp = new SeleccionPeliculas();
+            sp.ShowDialog();
+        }
+
+        private void pic_juegos_Click(object sender, EventArgs e)
+        {
+            SeleccionJuegos sj = new SeleccionJuegos();
+            sj.ShowDialog();
+        }
     }
 }

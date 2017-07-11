@@ -16,5 +16,23 @@ namespace Sistema_Chachi_Guay
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            AjusteUsuario au = new AjusteUsuario();
+            au.ShowDialog();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            AjusteTipo at = new AjusteTipo();
+            at.ShowDialog(); 
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            AjusteEstado ae = new AjusteEstado();
+            ae.ShowDialog();
+        }
     }
 }

@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SeleccionSerie));
             this.pic_anime = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pic_anime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -45,6 +47,7 @@
             this.pic_anime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_anime.TabIndex = 0;
             this.pic_anime.TabStop = false;
+            this.toolTip1.SetToolTip(this.pic_anime, "Series de monitos");
             // 
             // pictureBox1
             // 
@@ -55,6 +58,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox1, "Serie de humanos");
             // 
             // label1
             // 
@@ -93,5 +97,6 @@
         private System.Windows.Forms.PictureBox pic_anime;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

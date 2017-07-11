@@ -45,11 +45,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AjusteEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjusteEstado.Designer.cs">
+      <DependentUpon>AjusteEstado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ajustes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ajustes.Designer.cs">
       <DependentUpon>Ajustes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AjusteTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjusteTipo.Designer.cs">
+      <DependentUpon>AjusteTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AjusteUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjusteUsuario.Designer.cs">
+      <DependentUpon>AjusteUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -71,6 +89,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeleccionJuegos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeleccionJuegos.Designer.cs">
+      <DependentUpon>SeleccionJuegos.cs</DependentUpon>
+    </Compile>
     <Compile Include="SeleccionLibros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,10 +107,25 @@
     <Compile Include="SeleccionSerie.Designer.cs">
       <DependentUpon>SeleccionSerie.cs</DependentUpon>
     </Compile>
+    <Compile Include="SeleccionPeliculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeleccionPeliculas.Designer.cs">
+      <DependentUpon>SeleccionPeliculas.cs</DependentUpon>
+    </Compile>
     <Compile Include="SQL.cs" />
     <Compile Include="Util.cs" />
+    <EmbeddedResource Include="AjusteEstado.resx">
+      <DependentUpon>AjusteEstado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ajustes.resx">
       <DependentUpon>Ajustes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjusteTipo.resx">
+      <DependentUpon>AjusteTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjusteUsuario.resx">
+      <DependentUpon>AjusteUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -107,11 +146,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SeleccionJuegos.resx">
+      <DependentUpon>SeleccionJuegos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SeleccionLibros.resx">
       <DependentUpon>SeleccionLibros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SeleccionSerie.resx">
       <DependentUpon>SeleccionSerie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeleccionPeliculas.resx">
+      <DependentUpon>SeleccionPeliculas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

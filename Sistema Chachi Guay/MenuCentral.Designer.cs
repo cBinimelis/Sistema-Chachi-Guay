@@ -53,7 +53,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(255, 55);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Menu Principal";
+            this.label1.Text = "Menú Principal";
             // 
             // button2
             // 
@@ -63,7 +63,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(121, 43);
             this.button2.TabIndex = 7;
-            this.button2.Text = "Cerrar Sesion";
+            this.button2.Text = "Cerrar Sesión";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -78,6 +78,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Pendientes";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.button1, "Ver biblioteca de pendientes");
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -89,8 +90,9 @@
             this.btn_ajustes.Name = "btn_ajustes";
             this.btn_ajustes.Size = new System.Drawing.Size(121, 43);
             this.btn_ajustes.TabIndex = 5;
-            this.btn_ajustes.Text = "Configuracion";
+            this.btn_ajustes.Text = "Configuración";
             this.btn_ajustes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btn_ajustes, "Ver ajustes");
             this.btn_ajustes.UseVisualStyleBackColor = true;
             this.btn_ajustes.Click += new System.EventHandler(this.btn_ajustes_Click);
             // 
@@ -116,6 +118,7 @@
             this.pic_peliculas.TabIndex = 2;
             this.pic_peliculas.TabStop = false;
             this.toolTip1.SetToolTip(this.pic_peliculas, "Ver biblioteca de peliculas");
+            this.pic_peliculas.Click += new System.EventHandler(this.pic_peliculas_Click);
             // 
             // pic_juegos
             // 
@@ -127,6 +130,7 @@
             this.pic_juegos.TabIndex = 1;
             this.pic_juegos.TabStop = false;
             this.toolTip1.SetToolTip(this.pic_juegos, "Ver biblioteca de juegos");
+            this.pic_juegos.Click += new System.EventHandler(this.pic_juegos_Click);
             // 
             // pic_libros
             // 

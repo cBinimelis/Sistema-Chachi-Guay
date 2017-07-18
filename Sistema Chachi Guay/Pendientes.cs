@@ -16,5 +16,10 @@ namespace Sistema_Chachi_Guay
         {
             InitializeComponent();
         }
+
+        private void Pendientes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

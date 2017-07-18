@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sistema_Chachi_Guay
 {
-    public partial class AjusteEstado : Form
+    public partial class AjusteGenero : Form
     {
-        public AjusteEstado()
+        public AjusteGenero()
         {
             InitializeComponent();
         }

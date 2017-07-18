@@ -65,13 +65,13 @@ namespace Sistema_Chachi_Guay
 
         private void pic_peliculas_Click(object sender, EventArgs e)
         {
-            SeleccionPeliculas sp = new SeleccionPeliculas();
+            Peliculas sp = new Peliculas();
             sp.ShowDialog();
         }
 
         private void pic_juegos_Click(object sender, EventArgs e)
         {
-            SeleccionJuegos sj = new SeleccionJuegos();
+            Juegos sj = new Juegos();
             sj.ShowDialog();
         }
     }

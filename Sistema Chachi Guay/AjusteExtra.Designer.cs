@@ -1,6 +1,6 @@
 ﻿namespace Sistema_Chachi_Guay
 {
-    partial class AjusteEstado
+    partial class AjusteExtra
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AjusteEstado));
-            this.SuspendLayout();
-            // 
-            // AjusteEstado
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 494);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(418, 533);
-            this.MinimumSize = new System.Drawing.Size(418, 533);
-            this.Name = "AjusteEstado";
-            this.Text = "AjusteEstado";
-            this.ResumeLayout(false);
-
+            this.Text = "AjusteExtra";
         }
 
         #endregion

@@ -30,24 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SeleccionSerie));
-            this.pic_anime = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_anime)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pic_anime = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_anime)).BeginInit();
             this.SuspendLayout();
             // 
-            // pic_anime
+            // label1
             // 
-            this.pic_anime.Image = global::Sistema_Chachi_Guay.Properties.Resources.anime;
-            this.pic_anime.Location = new System.Drawing.Point(12, 291);
-            this.pic_anime.Name = "pic_anime";
-            this.pic_anime.Size = new System.Drawing.Size(378, 191);
-            this.pic_anime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_anime.TabIndex = 0;
-            this.pic_anime.TabStop = false;
-            this.toolTip1.SetToolTip(this.pic_anime, "Series de monitos");
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Rage Italic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(14, 218);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(374, 61);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "¿Que Tipo de serie?";
             // 
             // pictureBox1
             // 
@@ -59,16 +58,19 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBox1, "Serie de humanos");
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // label1
+            // pic_anime
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Rage Italic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 218);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(374, 61);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "¿Que Tipo de serie?";
+            this.pic_anime.Image = global::Sistema_Chachi_Guay.Properties.Resources.anime;
+            this.pic_anime.Location = new System.Drawing.Point(12, 291);
+            this.pic_anime.Name = "pic_anime";
+            this.pic_anime.Size = new System.Drawing.Size(378, 191);
+            this.pic_anime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_anime.TabIndex = 0;
+            this.pic_anime.TabStop = false;
+            this.toolTip1.SetToolTip(this.pic_anime, "Series de monitos");
+            this.pic_anime.Click += new System.EventHandler(this.pic_anime_Click);
             // 
             // SeleccionSerie
             // 
@@ -85,8 +87,8 @@
             this.Name = "SeleccionSerie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccionar";
-            ((System.ComponentModel.ISupportInitialize)(this.pic_anime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_anime)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

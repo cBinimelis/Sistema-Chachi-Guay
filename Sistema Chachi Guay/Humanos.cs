@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sistema_Chachi_Guay
 {
-    public partial class SeleccionJuegos : Form
+    public partial class Humanos : Form
     {
-        public SeleccionJuegos()
+        public Humanos()
         {
             InitializeComponent();
         }

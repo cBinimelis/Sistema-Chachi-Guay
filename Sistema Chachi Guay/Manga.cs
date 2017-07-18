@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Sistema_Chachi_Guay
 {
-    public partial class AjusteUsuario : Form
+    public partial class Manga : Form
     {
-        public AjusteUsuario()
+        public Manga()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

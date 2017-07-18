@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Sistema_Chachi_Guay
 {
-    public partial class AjusteUsuario : Form
+    public partial class Anime : Form
     {
-        public AjusteUsuario()
+        public Anime()
         {
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void Anime_Load(object sender, EventArgs e)
         {
 
         }

@@ -16,5 +16,10 @@ namespace Sistema_Chachi_Guay
         {
             InitializeComponent();
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -31,7 +31,7 @@ namespace Sistema_Chachi_Guay
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            AjusteEstado ae = new AjusteEstado();
+            AjusteExtra ae = new AjusteExtra();
             ae.ShowDialog();
         }
     }

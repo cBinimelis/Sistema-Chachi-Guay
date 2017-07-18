@@ -16,5 +16,17 @@ namespace Sistema_Chachi_Guay
         {
             InitializeComponent();
         }
+
+        private void pic_anime_Click(object sender, EventArgs e)
+        {
+            Anime a = new Anime();
+            a.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Humanos h = new Humanos();
+            h.ShowDialog();
+        }
     }
 }

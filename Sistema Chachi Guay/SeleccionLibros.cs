@@ -16,5 +16,17 @@ namespace Sistema_Chachi_Guay
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Manga m = new Manga();
+            m.ShowDialog();
+        }
+
+        private void pic_libros_Click(object sender, EventArgs e)
+        {
+            Libros l = new Libros();
+            l.ShowDialog();
+        }
     }
 }

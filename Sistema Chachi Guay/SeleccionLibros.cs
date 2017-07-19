@@ -21,12 +21,14 @@ namespace Sistema_Chachi_Guay
         {
             Manga m = new Manga();
             m.ShowDialog();
+            this.Close();
         }
 
         private void pic_libros_Click(object sender, EventArgs e)
         {
             Libros l = new Libros();
             l.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -16,5 +16,12 @@ namespace Sistema_Chachi_Guay
         {
             InitializeComponent();
         }
+
+        private void Manga_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'bd_bibliotecaDataSet.Manga' Puede moverla o quitarla según sea necesario.
+            this.mangaTableAdapter.Fill(this.bd_bibliotecaDataSet.Manga);
+
+        }
     }
 }

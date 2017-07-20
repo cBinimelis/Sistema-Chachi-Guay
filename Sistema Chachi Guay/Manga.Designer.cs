@@ -36,6 +36,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idMangaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sinopsisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lanzamientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tomosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idestadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mangaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bd_bibliotecaDataSet = new Sistema_Chachi_Guay.bd_bibliotecaDataSet();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
@@ -48,22 +57,13 @@
             this.btn_delete = new System.Windows.Forms.Button();
             this.pic_imagen = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.bd_bibliotecaDataSet = new Sistema_Chachi_Guay.bd_bibliotecaDataSet();
             this.bdbibliotecaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mangaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mangaTableAdapter = new Sistema_Chachi_Guay.bd_bibliotecaDataSetTableAdapters.MangaTableAdapter();
-            this.idMangaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sinopsisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lanzamientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tomosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idestadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_imagen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bd_bibliotecaDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdbibliotecaDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mangaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bd_bibliotecaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_imagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdbibliotecaDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -132,6 +132,73 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(270, 456);
             this.dataGridView1.TabIndex = 22;
+            // 
+            // idMangaDataGridViewTextBoxColumn
+            // 
+            this.idMangaDataGridViewTextBoxColumn.DataPropertyName = "id_Manga";
+            this.idMangaDataGridViewTextBoxColumn.HeaderText = "id_Manga";
+            this.idMangaDataGridViewTextBoxColumn.Name = "idMangaDataGridViewTextBoxColumn";
+            this.idMangaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idMangaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // sinopsisDataGridViewTextBoxColumn
+            // 
+            this.sinopsisDataGridViewTextBoxColumn.DataPropertyName = "Sinopsis";
+            this.sinopsisDataGridViewTextBoxColumn.HeaderText = "Sinopsis";
+            this.sinopsisDataGridViewTextBoxColumn.Name = "sinopsisDataGridViewTextBoxColumn";
+            this.sinopsisDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sinopsisDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // lanzamientoDataGridViewTextBoxColumn
+            // 
+            this.lanzamientoDataGridViewTextBoxColumn.DataPropertyName = "Lanzamiento";
+            this.lanzamientoDataGridViewTextBoxColumn.HeaderText = "Lanzamiento";
+            this.lanzamientoDataGridViewTextBoxColumn.Name = "lanzamientoDataGridViewTextBoxColumn";
+            this.lanzamientoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lanzamientoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tomosDataGridViewTextBoxColumn
+            // 
+            this.tomosDataGridViewTextBoxColumn.DataPropertyName = "Tomos";
+            this.tomosDataGridViewTextBoxColumn.HeaderText = "Tomos";
+            this.tomosDataGridViewTextBoxColumn.Name = "tomosDataGridViewTextBoxColumn";
+            this.tomosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tomosDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idestadoDataGridViewTextBoxColumn
+            // 
+            this.idestadoDataGridViewTextBoxColumn.DataPropertyName = "id_estado";
+            this.idestadoDataGridViewTextBoxColumn.HeaderText = "id_estado";
+            this.idestadoDataGridViewTextBoxColumn.Name = "idestadoDataGridViewTextBoxColumn";
+            this.idestadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idestadoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idUsuarioDataGridViewTextBoxColumn
+            // 
+            this.idUsuarioDataGridViewTextBoxColumn.DataPropertyName = "id_Usuario";
+            this.idUsuarioDataGridViewTextBoxColumn.HeaderText = "id_Usuario";
+            this.idUsuarioDataGridViewTextBoxColumn.Name = "idUsuarioDataGridViewTextBoxColumn";
+            this.idUsuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idUsuarioDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // mangaBindingSource
+            // 
+            this.mangaBindingSource.DataMember = "Manga";
+            this.mangaBindingSource.DataSource = this.bd_bibliotecaDataSet;
+            // 
+            // bd_bibliotecaDataSet
+            // 
+            this.bd_bibliotecaDataSet.DataSetName = "bd_bibliotecaDataSet";
+            this.bd_bibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label5
             // 
@@ -222,6 +289,7 @@
             this.pic_imagen.Size = new System.Drawing.Size(244, 248);
             this.pic_imagen.TabIndex = 44;
             this.pic_imagen.TabStop = false;
+            this.pic_imagen.Click += new System.EventHandler(this.pic_imagen_Click);
             // 
             // textBox2
             // 
@@ -230,81 +298,14 @@
             this.textBox2.Size = new System.Drawing.Size(180, 20);
             this.textBox2.TabIndex = 45;
             // 
-            // bd_bibliotecaDataSet
-            // 
-            this.bd_bibliotecaDataSet.DataSetName = "bd_bibliotecaDataSet";
-            this.bd_bibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // bdbibliotecaDataSetBindingSource
             // 
             this.bdbibliotecaDataSetBindingSource.DataSource = this.bd_bibliotecaDataSet;
             this.bdbibliotecaDataSetBindingSource.Position = 0;
             // 
-            // mangaBindingSource
-            // 
-            this.mangaBindingSource.DataMember = "Manga";
-            this.mangaBindingSource.DataSource = this.bd_bibliotecaDataSet;
-            // 
             // mangaTableAdapter
             // 
             this.mangaTableAdapter.ClearBeforeFill = true;
-            // 
-            // idMangaDataGridViewTextBoxColumn
-            // 
-            this.idMangaDataGridViewTextBoxColumn.DataPropertyName = "id_Manga";
-            this.idMangaDataGridViewTextBoxColumn.HeaderText = "id_Manga";
-            this.idMangaDataGridViewTextBoxColumn.Name = "idMangaDataGridViewTextBoxColumn";
-            this.idMangaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idMangaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // sinopsisDataGridViewTextBoxColumn
-            // 
-            this.sinopsisDataGridViewTextBoxColumn.DataPropertyName = "Sinopsis";
-            this.sinopsisDataGridViewTextBoxColumn.HeaderText = "Sinopsis";
-            this.sinopsisDataGridViewTextBoxColumn.Name = "sinopsisDataGridViewTextBoxColumn";
-            this.sinopsisDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sinopsisDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // lanzamientoDataGridViewTextBoxColumn
-            // 
-            this.lanzamientoDataGridViewTextBoxColumn.DataPropertyName = "Lanzamiento";
-            this.lanzamientoDataGridViewTextBoxColumn.HeaderText = "Lanzamiento";
-            this.lanzamientoDataGridViewTextBoxColumn.Name = "lanzamientoDataGridViewTextBoxColumn";
-            this.lanzamientoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lanzamientoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // tomosDataGridViewTextBoxColumn
-            // 
-            this.tomosDataGridViewTextBoxColumn.DataPropertyName = "Tomos";
-            this.tomosDataGridViewTextBoxColumn.HeaderText = "Tomos";
-            this.tomosDataGridViewTextBoxColumn.Name = "tomosDataGridViewTextBoxColumn";
-            this.tomosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tomosDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idestadoDataGridViewTextBoxColumn
-            // 
-            this.idestadoDataGridViewTextBoxColumn.DataPropertyName = "id_estado";
-            this.idestadoDataGridViewTextBoxColumn.HeaderText = "id_estado";
-            this.idestadoDataGridViewTextBoxColumn.Name = "idestadoDataGridViewTextBoxColumn";
-            this.idestadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idestadoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idUsuarioDataGridViewTextBoxColumn
-            // 
-            this.idUsuarioDataGridViewTextBoxColumn.DataPropertyName = "id_Usuario";
-            this.idUsuarioDataGridViewTextBoxColumn.HeaderText = "id_Usuario";
-            this.idUsuarioDataGridViewTextBoxColumn.Name = "idUsuarioDataGridViewTextBoxColumn";
-            this.idUsuarioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idUsuarioDataGridViewTextBoxColumn.Visible = false;
             // 
             // Manga
             // 
@@ -336,10 +337,10 @@
             this.Text = "Manga";
             this.Load += new System.EventHandler(this.Manga_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_imagen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bd_bibliotecaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdbibliotecaDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mangaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bd_bibliotecaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_imagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdbibliotecaDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

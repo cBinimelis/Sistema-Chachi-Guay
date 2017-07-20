@@ -12,6 +12,7 @@ namespace Sistema_Chachi_Guay
 {
     public partial class Manga : Form
     {
+        OpenFileDialog op = new OpenFileDialog();
         public Manga()
         {
             InitializeComponent();
@@ -22,6 +23,17 @@ namespace Sistema_Chachi_Guay
             // TODO: esta línea de código carga datos en la tabla 'bd_bibliotecaDataSet.Manga' Puede moverla o quitarla según sea necesario.
             this.mangaTableAdapter.Fill(this.bd_bibliotecaDataSet.Manga);
 
+        }
+
+        private void pic_imagen_Click(object sender, EventArgs e)
+        {
+            DialogResult result = op.ShowDialog();
+            op.Title = "Busqueda de Imagen";
+            op.Filter = "jpg files (*.jpg) | *.jpg";
+            if (result == DialogResult.OK) // Test result.
+            {
+                pic_imagen.Image = new Bitmap(op.FileName);
+            }
         }
     }
 }

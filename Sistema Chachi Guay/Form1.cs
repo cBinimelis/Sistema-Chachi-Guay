@@ -24,6 +24,12 @@ namespace Sistema_Chachi_Guay
 
         }
 
+        private void Limpiar()
+        {
+            txt_usuario.Text = "";
+            txt_pass.Text = "";
+        }
+
         private void btn_ingreso_Click(object sender, EventArgs e)
         {
             try
@@ -39,6 +45,7 @@ namespace Sistema_Chachi_Guay
                     {
                         if (usuario[2].ToString().Equals(txt_pass.Text))
                         {
+                            Limpiar();
                             Usuario.setNick(txt_usuario.Text);
                             Util.setF1(this);
                             MenuCentral mc = new MenuCentral();

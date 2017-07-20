@@ -50,7 +50,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("French Script MT", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(65, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(255, 55);
             this.label1.TabIndex = 4;
@@ -148,7 +148,7 @@
             // lbl_usuario
             // 
             this.lbl_usuario.AutoSize = true;
-            this.lbl_usuario.Location = new System.Drawing.Point(314, 9);
+            this.lbl_usuario.Location = new System.Drawing.Point(326, 9);
             this.lbl_usuario.MaximumSize = new System.Drawing.Size(121, 13);
             this.lbl_usuario.Name = "lbl_usuario";
             this.lbl_usuario.Size = new System.Drawing.Size(64, 13);

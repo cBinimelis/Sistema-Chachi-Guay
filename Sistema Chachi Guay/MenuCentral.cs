@@ -61,7 +61,15 @@ namespace Sistema_Chachi_Guay
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("¿Deseas realmente cerrar sesion?", "Puede que hayas presionado por error...", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                MessageBox.Show("Sigue disfrutando");
+            }
+            else
+            {
+                this.Dispose();
+                Util.getF1().Show();
+            }
         }
 
         private void pic_peliculas_Click(object sender, EventArgs e)

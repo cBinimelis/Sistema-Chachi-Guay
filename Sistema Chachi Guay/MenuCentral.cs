@@ -12,6 +12,7 @@ namespace Sistema_Chachi_Guay
 {
     public partial class MenuCentral : Form
     {
+        Usuario u = new Usuario();
         public MenuCentral()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace Sistema_Chachi_Guay
 
         private void MenuCentral_Load(object sender, EventArgs e)
         {
-
+            lbl_usuario.Text = Usuario.getNick();
         }
 
         private void pic_libros_Click(object sender, EventArgs e)

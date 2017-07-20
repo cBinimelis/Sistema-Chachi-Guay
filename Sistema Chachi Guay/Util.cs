@@ -19,4 +19,19 @@ namespace Sistema_Chachi_Guay
             return Util.f1;
         }
     }
+
+    class Usuario
+    {
+        private static string Nick = "";
+
+        public static void setNick(String Nick)
+        {
+            Usuario.Nick = Nick;
+        }
+
+        public static String getNick()
+        {
+            return Usuario.Nick;
+        }
+    }
 }

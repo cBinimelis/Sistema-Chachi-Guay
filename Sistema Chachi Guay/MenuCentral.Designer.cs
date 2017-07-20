@@ -32,13 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuCentral));
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_ajustes = new System.Windows.Forms.Button();
             this.pic_series = new System.Windows.Forms.PictureBox();
             this.pic_peliculas = new System.Windows.Forms.PictureBox();
             this.pic_juegos = new System.Windows.Forms.PictureBox();
             this.pic_libros = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.lbl_usuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pic_series)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_peliculas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_juegos)).BeginInit();
@@ -49,24 +50,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("French Script MT", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(58, 9);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(255, 55);
             this.label1.TabIndex = 4;
             this.label1.Text = "Menú Principal";
-            // 
-            // button2
-            // 
-            this.button2.Image = global::Sistema_Chachi_Guay.Properties.Resources.Logout;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(269, 253);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 43);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Cerrar Sesión";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -144,12 +132,38 @@
             this.toolTip1.SetToolTip(this.pic_libros, "Ver biblioteca de libros");
             this.pic_libros.Click += new System.EventHandler(this.pic_libros_Click);
             // 
+            // button2
+            // 
+            this.button2.Image = global::Sistema_Chachi_Guay.Properties.Resources.Logout;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.Location = new System.Drawing.Point(269, 253);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(121, 43);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Cerrar Sesión";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // lbl_usuario
+            // 
+            this.lbl_usuario.AutoSize = true;
+            this.lbl_usuario.Location = new System.Drawing.Point(314, 9);
+            this.lbl_usuario.MaximumSize = new System.Drawing.Size(121, 13);
+            this.lbl_usuario.Name = "lbl_usuario";
+            this.lbl_usuario.Size = new System.Drawing.Size(64, 13);
+            this.lbl_usuario.TabIndex = 8;
+            this.lbl_usuario.Text = "asdasdasda";
+            this.lbl_usuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lbl_usuario, "Bienvenido");
+            // 
             // MenuCentral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;
             this.ClientSize = new System.Drawing.Size(402, 494);
+            this.Controls.Add(this.lbl_usuario);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_ajustes);
@@ -188,5 +202,6 @@
         private System.Windows.Forms.Button btn_ajustes;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lbl_usuario;
     }
 }

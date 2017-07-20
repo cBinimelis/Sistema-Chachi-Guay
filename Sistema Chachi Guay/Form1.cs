@@ -30,18 +30,30 @@ namespace Sistema_Chachi_Guay
             {
                 if (txt_usuario.Text.Equals("") || txt_pass.Text.Equals(""))
                 {
-                    // MessageBox.Show("Ingresa los datos solicitados", "Las prisas no son buenas", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Util.setF1(this);
-                    MenuCentral mc = new MenuCentral();
-                    mc.Show();
-                    this.Hide();
+                    MessageBox.Show("Ingresa los datos solicitados", "Las prisas no son buenas", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    Util.setF1(this);
-                    MenuCentral mc = new MenuCentral();
-                    mc.Show();
-                    this.Hide();
+                    SqlDataReader usuario = sql.consulta("SELECT * FROM Usuario WHERE Nick ='" + txt_usuario.Text + "'");
+                    if (usuario.Read())
+                    {
+                        if (usuario[2].ToString().Equals(txt_pass.Text))
+                        {
+                            Usuario.setNick(txt_usuario.Text);
+                            Util.setF1(this);
+                            MenuCentral mc = new MenuCentral();
+                            mc.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Contraseña incorrecta, por favor intenta nuevamente", "Uuuuh, ahora tienes un problema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El usuario no se encuentra regristrado", "¿Quizá lo escribiste mal?", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
             catch (Exception ouch)

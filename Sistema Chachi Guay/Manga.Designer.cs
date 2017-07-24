@@ -35,7 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grillaMangas = new System.Windows.Forms.DataGridView();
             this.idMangaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sinopsisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,17 +49,17 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.txt_sinopsis = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_nota = new System.Windows.Forms.TextBox();
+            this.txt_generos = new System.Windows.Forms.TextBox();
+            this.txt_tomos = new System.Windows.Forms.TextBox();
             this.btn_edit = new System.Windows.Forms.Button();
             this.btn_new = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.pic_imagen = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.bdbibliotecaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mangaTableAdapter = new Sistema_Chachi_Guay.bd_bibliotecaDataSetTableAdapters.MangaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.comboEstado = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaMangas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mangaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bd_bibliotecaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_imagen)).BeginInit();
@@ -69,7 +69,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(323, 263);
+            this.label6.Location = new System.Drawing.Point(323, 262);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 13);
             this.label6.TabIndex = 31;
@@ -111,14 +111,15 @@
             this.label1.Size = new System.Drawing.Size(150, 55);
             this.label1.TabIndex = 23;
             this.label1.Text = "Mangas";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // dataGridView1
+            // grillaMangas
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grillaMangas.AllowUserToAddRows = false;
+            this.grillaMangas.AllowUserToDeleteRows = false;
+            this.grillaMangas.AutoGenerateColumns = false;
+            this.grillaMangas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaMangas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idMangaDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
             this.sinopsisDataGridViewTextBoxColumn,
@@ -126,12 +127,13 @@
             this.tomosDataGridViewTextBoxColumn,
             this.idestadoDataGridViewTextBoxColumn,
             this.idUsuarioDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.mangaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(270, 456);
-            this.dataGridView1.TabIndex = 22;
+            this.grillaMangas.DataSource = this.mangaBindingSource;
+            this.grillaMangas.Location = new System.Drawing.Point(12, 12);
+            this.grillaMangas.Name = "grillaMangas";
+            this.grillaMangas.ReadOnly = true;
+            this.grillaMangas.Size = new System.Drawing.Size(270, 456);
+            this.grillaMangas.TabIndex = 22;
+            this.grillaMangas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillaMangas_CellClick);
             // 
             // idMangaDataGridViewTextBoxColumn
             // 
@@ -212,7 +214,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(323, 237);
+            this.label7.Location = new System.Drawing.Point(323, 235);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 13);
             this.label7.TabIndex = 33;
@@ -220,6 +222,7 @@
             // 
             // txt_nombre
             // 
+            this.txt_nombre.Enabled = false;
             this.txt_nombre.Location = new System.Drawing.Point(390, 79);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(180, 20);
@@ -234,69 +237,85 @@
             this.txt_sinopsis.Size = new System.Drawing.Size(180, 69);
             this.txt_sinopsis.TabIndex = 35;
             // 
-            // textBox1
+            // txt_nota
             // 
-            this.textBox1.Location = new System.Drawing.Point(390, 260);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 20);
-            this.textBox1.TabIndex = 36;
+            this.txt_nota.Enabled = false;
+            this.txt_nota.Location = new System.Drawing.Point(390, 259);
+            this.txt_nota.Name = "txt_nota";
+            this.txt_nota.Size = new System.Drawing.Size(180, 20);
+            this.txt_nota.TabIndex = 36;
             // 
-            // textBox3
+            // txt_generos
             // 
-            this.textBox3.Location = new System.Drawing.Point(390, 208);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(180, 20);
-            this.textBox3.TabIndex = 38;
+            this.txt_generos.Enabled = false;
+            this.txt_generos.Location = new System.Drawing.Point(390, 206);
+            this.txt_generos.Name = "txt_generos";
+            this.txt_generos.Size = new System.Drawing.Size(180, 20);
+            this.txt_generos.TabIndex = 38;
             // 
-            // textBox4
+            // txt_tomos
             // 
-            this.textBox4.Location = new System.Drawing.Point(390, 180);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(180, 20);
-            this.textBox4.TabIndex = 39;
+            this.txt_tomos.Enabled = false;
+            this.txt_tomos.Location = new System.Drawing.Point(390, 180);
+            this.txt_tomos.Name = "txt_tomos";
+            this.txt_tomos.Size = new System.Drawing.Size(180, 20);
+            this.txt_tomos.TabIndex = 39;
             // 
             // btn_edit
             // 
+            this.btn_edit.BackColor = System.Drawing.Color.LightBlue;
+            this.btn_edit.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btn_edit.FlatAppearance.BorderSize = 3;
+            this.btn_edit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_edit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
+            this.btn_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_edit.Location = new System.Drawing.Point(12, 474);
             this.btn_edit.Name = "btn_edit";
             this.btn_edit.Size = new System.Drawing.Size(60, 60);
             this.btn_edit.TabIndex = 41;
-            this.btn_edit.Text = "button1";
-            this.btn_edit.UseVisualStyleBackColor = true;
+            this.btn_edit.Text = "Editar";
+            this.btn_edit.UseVisualStyleBackColor = false;
             // 
             // btn_new
             // 
+            this.btn_new.BackColor = System.Drawing.Color.LightBlue;
+            this.btn_new.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btn_new.FlatAppearance.BorderSize = 3;
+            this.btn_new.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_new.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
+            this.btn_new.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_new.Location = new System.Drawing.Point(78, 474);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(138, 60);
             this.btn_new.TabIndex = 42;
-            this.btn_new.Text = "button2";
-            this.btn_new.UseVisualStyleBackColor = true;
+            this.btn_new.Text = "Agregar Manga";
+            this.btn_new.UseVisualStyleBackColor = false;
             // 
             // btn_delete
             // 
+            this.btn_delete.BackColor = System.Drawing.Color.LightBlue;
+            this.btn_delete.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btn_delete.FlatAppearance.BorderSize = 3;
+            this.btn_delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
+            this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Location = new System.Drawing.Point(222, 474);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(60, 60);
             this.btn_delete.TabIndex = 43;
-            this.btn_delete.Text = "button3";
-            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Text = "Borrar";
+            this.btn_delete.UseVisualStyleBackColor = false;
             // 
             // pic_imagen
             // 
+            this.pic_imagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pic_imagen.Location = new System.Drawing.Point(326, 286);
             this.pic_imagen.Name = "pic_imagen";
             this.pic_imagen.Size = new System.Drawing.Size(244, 248);
+            this.pic_imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_imagen.TabIndex = 44;
             this.pic_imagen.TabStop = false;
             this.pic_imagen.Click += new System.EventHandler(this.pic_imagen_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(390, 234);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 20);
-            this.textBox2.TabIndex = 45;
             // 
             // bdbibliotecaDataSetBindingSource
             // 
@@ -307,20 +326,29 @@
             // 
             this.mangaTableAdapter.ClearBeforeFill = true;
             // 
+            // comboEstado
+            // 
+            this.comboEstado.Enabled = false;
+            this.comboEstado.FormattingEnabled = true;
+            this.comboEstado.Location = new System.Drawing.Point(390, 232);
+            this.comboEstado.Name = "comboEstado";
+            this.comboEstado.Size = new System.Drawing.Size(180, 21);
+            this.comboEstado.TabIndex = 45;
+            // 
             // Manga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(582, 546);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.comboEstado);
             this.Controls.Add(this.pic_imagen);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_new);
             this.Controls.Add(this.btn_edit);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_tomos);
+            this.Controls.Add(this.txt_generos);
+            this.Controls.Add(this.txt_nota);
             this.Controls.Add(this.txt_sinopsis);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.label7);
@@ -330,13 +358,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.grillaMangas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Manga";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manga";
             this.Load += new System.EventHandler(this.Manga_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaMangas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mangaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bd_bibliotecaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_imagen)).EndInit();
@@ -353,19 +381,18 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grillaMangas;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.TextBox txt_sinopsis;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_nota;
+        private System.Windows.Forms.TextBox txt_generos;
+        private System.Windows.Forms.TextBox txt_tomos;
         private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button btn_new;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.PictureBox pic_imagen;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.BindingSource bdbibliotecaDataSetBindingSource;
         private bd_bibliotecaDataSet bd_bibliotecaDataSet;
         private System.Windows.Forms.BindingSource mangaBindingSource;
@@ -377,5 +404,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tomosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idestadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idUsuarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox comboEstado;
     }
 }

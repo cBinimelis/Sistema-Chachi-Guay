@@ -57,6 +57,7 @@ namespace Sistema_Chachi_Guay
             }
             catch { return -1; }
         }
+
         public Boolean verificar(String sentencia)
         {
             try

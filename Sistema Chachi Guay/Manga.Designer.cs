@@ -189,18 +189,18 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(288, 235);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 13);
+            this.label5.Size = new System.Drawing.Size(48, 13);
             this.label5.TabIndex = 32;
-            this.label5.Text = "Genero:";
+            this.label5.Text = "Genero :";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(288, 259);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 13);
+            this.label7.Size = new System.Drawing.Size(46, 13);
             this.label7.TabIndex = 33;
-            this.label7.Text = "Estado:";
+            this.label7.Text = "Estado :";
             // 
             // txt_nombre
             // 
@@ -310,9 +310,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(288, 207);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 26;
-            this.label4.Text = "Tomos: ";
+            this.label4.Text = "Tomos : ";
             // 
             // txt_tomos
             // 
@@ -327,9 +327,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(288, 181);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 13);
+            this.label6.Size = new System.Drawing.Size(54, 13);
             this.label6.TabIndex = 46;
-            this.label6.Text = "Lanzado";
+            this.label6.Text = "Lanzado :";
             // 
             // date_Lanzamiento
             // 

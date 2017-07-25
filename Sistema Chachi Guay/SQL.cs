@@ -90,7 +90,7 @@ namespace Sistema_Chachi_Guay
             SqlDataReader sqlReader = sqlCmd.ExecuteReader();
             while (sqlReader.Read())
             {
-                cb.Items.Add(sqlReader["type_name"].ToString());
+                cb.Items.Add(sqlReader["Descripcion"].ToString());
             }
         }
     }

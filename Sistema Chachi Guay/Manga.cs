@@ -28,6 +28,7 @@ namespace Sistema_Chachi_Guay
         {
             this.mangaTableAdapter.Fill(this.bd_bibliotecaDataSet.Manga);
             pic_imagen.ImageLocation = "./images/Libros/Dibujos/onepiece.jpg";
+            sql.llenaCombo(comboEstado, "SELECT * FROM Estado");
         }
 
         //Esta funcion habilita los elementos para permitir la edicion o ingreso de nuevos datos
@@ -111,9 +112,9 @@ namespace Sistema_Chachi_Guay
 
         private void Nuevo()
         {
-            if (true)
+            if (txt_nombre.Text.Trim().Equals("") || txt_sinopsis.Text.Trim().Equals("") || txt_tomos.Text.Trim().Equals(""))
             {
-
+                MessageBox.Show("No puedes dejar campos vacios", "¡Detengase ahí COMPAÑERO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

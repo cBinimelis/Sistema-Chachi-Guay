@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manga));
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,9 +47,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.txt_sinopsis = new System.Windows.Forms.TextBox();
-            this.txt_nota = new System.Windows.Forms.TextBox();
             this.txt_generos = new System.Windows.Forms.TextBox();
-            this.txt_tomos = new System.Windows.Forms.TextBox();
             this.btn_edit = new System.Windows.Forms.Button();
             this.btn_new = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
@@ -59,6 +55,10 @@
             this.bdbibliotecaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mangaTableAdapter = new Sistema_Chachi_Guay.bd_bibliotecaDataSetTableAdapters.MangaTableAdapter();
             this.comboEstado = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_tomos = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.date_Lanzamiento = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.grillaMangas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mangaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bd_bibliotecaDataSet)).BeginInit();
@@ -66,28 +66,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bdbibliotecaDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(323, 262);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 13);
-            this.label6.TabIndex = 31;
-            this.label6.Text = "Nota:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(323, 183);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Tomos: ";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(323, 108);
+            this.label3.Location = new System.Drawing.Point(288, 105);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 25;
@@ -96,7 +78,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(323, 82);
+            this.label2.Location = new System.Drawing.Point(288, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 24;
@@ -106,7 +88,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("French Script MT", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(371, 12);
+            this.label1.Location = new System.Drawing.Point(349, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 55);
             this.label1.TabIndex = 23;
@@ -205,7 +187,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(323, 211);
+            this.label5.Location = new System.Drawing.Point(288, 235);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 32;
@@ -214,7 +196,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(323, 235);
+            this.label7.Location = new System.Drawing.Point(288, 259);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 13);
             this.label7.TabIndex = 33;
@@ -223,47 +205,32 @@
             // txt_nombre
             // 
             this.txt_nombre.Enabled = false;
-            this.txt_nombre.Location = new System.Drawing.Point(390, 79);
+            this.txt_nombre.Location = new System.Drawing.Point(359, 79);
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(180, 20);
+            this.txt_nombre.Size = new System.Drawing.Size(211, 20);
             this.txt_nombre.TabIndex = 34;
             // 
             // txt_sinopsis
             // 
             this.txt_sinopsis.Enabled = false;
-            this.txt_sinopsis.Location = new System.Drawing.Point(390, 105);
+            this.txt_sinopsis.Location = new System.Drawing.Point(359, 105);
             this.txt_sinopsis.Multiline = true;
             this.txt_sinopsis.Name = "txt_sinopsis";
-            this.txt_sinopsis.Size = new System.Drawing.Size(180, 69);
+            this.txt_sinopsis.Size = new System.Drawing.Size(211, 70);
             this.txt_sinopsis.TabIndex = 35;
-            // 
-            // txt_nota
-            // 
-            this.txt_nota.Enabled = false;
-            this.txt_nota.Location = new System.Drawing.Point(390, 259);
-            this.txt_nota.Name = "txt_nota";
-            this.txt_nota.Size = new System.Drawing.Size(180, 20);
-            this.txt_nota.TabIndex = 36;
             // 
             // txt_generos
             // 
             this.txt_generos.Enabled = false;
-            this.txt_generos.Location = new System.Drawing.Point(390, 206);
+            this.txt_generos.Location = new System.Drawing.Point(359, 233);
             this.txt_generos.Name = "txt_generos";
-            this.txt_generos.Size = new System.Drawing.Size(180, 20);
+            this.txt_generos.Size = new System.Drawing.Size(211, 20);
             this.txt_generos.TabIndex = 38;
-            // 
-            // txt_tomos
-            // 
-            this.txt_tomos.Enabled = false;
-            this.txt_tomos.Location = new System.Drawing.Point(390, 180);
-            this.txt_tomos.Name = "txt_tomos";
-            this.txt_tomos.Size = new System.Drawing.Size(180, 20);
-            this.txt_tomos.TabIndex = 39;
             // 
             // btn_edit
             // 
             this.btn_edit.BackColor = System.Drawing.Color.LightBlue;
+            this.btn_edit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_edit.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btn_edit.FlatAppearance.BorderSize = 3;
             this.btn_edit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
@@ -279,6 +246,7 @@
             // btn_new
             // 
             this.btn_new.BackColor = System.Drawing.Color.LightBlue;
+            this.btn_new.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_new.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btn_new.FlatAppearance.BorderSize = 3;
             this.btn_new.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
@@ -290,10 +258,12 @@
             this.btn_new.TabIndex = 42;
             this.btn_new.Text = "Agregar Manga";
             this.btn_new.UseVisualStyleBackColor = false;
+            this.btn_new.Click += new System.EventHandler(this.btn_new_Click);
             // 
             // btn_delete
             // 
             this.btn_delete.BackColor = System.Drawing.Color.LightBlue;
+            this.btn_delete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_delete.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btn_delete.FlatAppearance.BorderSize = 3;
             this.btn_delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
@@ -309,9 +279,9 @@
             // pic_imagen
             // 
             this.pic_imagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pic_imagen.Location = new System.Drawing.Point(326, 286);
+            this.pic_imagen.Location = new System.Drawing.Point(288, 286);
             this.pic_imagen.Name = "pic_imagen";
-            this.pic_imagen.Size = new System.Drawing.Size(244, 248);
+            this.pic_imagen.Size = new System.Drawing.Size(282, 248);
             this.pic_imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_imagen.TabIndex = 44;
             this.pic_imagen.TabStop = false;
@@ -330,10 +300,43 @@
             // 
             this.comboEstado.Enabled = false;
             this.comboEstado.FormattingEnabled = true;
-            this.comboEstado.Location = new System.Drawing.Point(390, 232);
+            this.comboEstado.Location = new System.Drawing.Point(359, 259);
             this.comboEstado.Name = "comboEstado";
-            this.comboEstado.Size = new System.Drawing.Size(180, 21);
+            this.comboEstado.Size = new System.Drawing.Size(211, 21);
             this.comboEstado.TabIndex = 45;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(288, 207);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Tomos: ";
+            // 
+            // txt_tomos
+            // 
+            this.txt_tomos.Enabled = false;
+            this.txt_tomos.Location = new System.Drawing.Point(359, 207);
+            this.txt_tomos.Name = "txt_tomos";
+            this.txt_tomos.Size = new System.Drawing.Size(211, 20);
+            this.txt_tomos.TabIndex = 39;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(288, 181);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 13);
+            this.label6.TabIndex = 46;
+            this.label6.Text = "Lanzado";
+            // 
+            // date_Lanzamiento
+            // 
+            this.date_Lanzamiento.Location = new System.Drawing.Point(359, 181);
+            this.date_Lanzamiento.Name = "date_Lanzamiento";
+            this.date_Lanzamiento.Size = new System.Drawing.Size(211, 20);
+            this.date_Lanzamiento.TabIndex = 48;
             // 
             // Manga
             // 
@@ -341,6 +344,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(582, 546);
+            this.Controls.Add(this.date_Lanzamiento);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.comboEstado);
             this.Controls.Add(this.pic_imagen);
             this.Controls.Add(this.btn_delete);
@@ -348,12 +353,10 @@
             this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.txt_tomos);
             this.Controls.Add(this.txt_generos);
-            this.Controls.Add(this.txt_nota);
             this.Controls.Add(this.txt_sinopsis);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -375,9 +378,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -386,9 +386,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.TextBox txt_sinopsis;
-        private System.Windows.Forms.TextBox txt_nota;
         private System.Windows.Forms.TextBox txt_generos;
-        private System.Windows.Forms.TextBox txt_tomos;
         private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button btn_new;
         private System.Windows.Forms.Button btn_delete;
@@ -405,5 +403,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idestadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idUsuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.ComboBox comboEstado;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt_tomos;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker date_Lanzamiento;
     }
 }

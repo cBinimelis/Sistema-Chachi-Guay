@@ -23,6 +23,7 @@ namespace Sistema_Chachi_Guay
         //Variables
         int IdManga = 0;
         bool Agregar = false;
+        bool Editar = false;
 
         private void Manga_Load(object sender, EventArgs e)
         {
@@ -105,7 +106,7 @@ namespace Sistema_Chachi_Guay
             btn_edit.Enabled = false;
         }
 
-        private void Editar()
+        private void Modificar()
         {
 
         }
@@ -118,10 +119,9 @@ namespace Sistema_Chachi_Guay
             }
             else
             {
-
+                Agregar = false;
+                Limpiar();
             }
-            Agregar = false;
-            Limpiar();
         }
 
         private void btn_new_Click(object sender, EventArgs e)
@@ -145,6 +145,50 @@ namespace Sistema_Chachi_Guay
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Se ha producido un problema");
+            }
+        }
+
+        private void btn_edit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Editar == true)
+                {
+                    Modificar();
+                    ModoNormal();
+                    Desactivar();
+                }
+                else
+                {
+                    Editar = true;
+                    Limpiar();
+                    Activar();
+                    ModoAgregar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Se ha producido un problema");
+            }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Agregar == true || Editar == true)
+                {
+                    Limpiar();
+                    ModoNormal();
+                    Desactivar();
+                }
+                else
+                {
+
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Se ha producido un error");
             }
         }
     }

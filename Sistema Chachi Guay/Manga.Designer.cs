@@ -242,6 +242,7 @@
             this.btn_edit.TabIndex = 41;
             this.btn_edit.Text = "Editar";
             this.btn_edit.UseVisualStyleBackColor = false;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // btn_new
             // 
@@ -275,6 +276,7 @@
             this.btn_delete.TabIndex = 43;
             this.btn_delete.Text = "Borrar";
             this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // pic_imagen
             // 

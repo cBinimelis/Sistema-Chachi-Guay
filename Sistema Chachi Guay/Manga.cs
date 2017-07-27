@@ -27,9 +27,11 @@ namespace Sistema_Chachi_Guay
 
         private void Manga_Load(object sender, EventArgs e)
         {
-            this.mangaTableAdapter.Fill(this.bd_bibliotecaDataSet.Manga);
+            // TODO: esta línea de código carga datos en la tabla 'bd_bibliotecaDataSet1.vManga' Puede moverla o quitarla según sea necesario.
+            this.vMangaTableAdapter.Fill(this.bd_bibliotecaDataSet1.vManga);
             pic_imagen.ImageLocation = "./images/Libros/Dibujos/onepiece.jpg";
             sql.llenaCombo(comboEstado, "SELECT * FROM Estado");
+            sql.llenaCombo(comboGeneros, "SELECT * FROM Genero_Mangas");
         }
 
         //Esta funcion habilita los elementos para permitir la edicion o ingreso de nuevos datos
@@ -39,6 +41,7 @@ namespace Sistema_Chachi_Guay
             txt_sinopsis.Enabled = true;
             date_Lanzamiento.Enabled = true;
             txt_tomos.Enabled = true;
+            comboGeneros.Enabled = true;
             txt_generos.Enabled = true;
             comboEstado.Enabled = true;
         }
@@ -49,6 +52,7 @@ namespace Sistema_Chachi_Guay
             txt_sinopsis.Enabled = false;
             date_Lanzamiento.Enabled = false;
             txt_tomos.Enabled = false;
+            comboGeneros.Enabled = false;
             txt_generos.Enabled = false;
             comboEstado.Enabled = false;
         }
@@ -60,6 +64,7 @@ namespace Sistema_Chachi_Guay
             txt_sinopsis.Text = "";
             date_Lanzamiento.Value = System.DateTime.Now;
             txt_tomos.Text = "";
+            comboGeneros.SelectedValue = 0;
             txt_generos.Text = "";
             comboEstado.SelectedValue = 0;
         }
@@ -70,7 +75,9 @@ namespace Sistema_Chachi_Guay
             txt_sinopsis.Text = grillaMangas.CurrentRow.Cells[2].EditedFormattedValue.ToString();
             date_Lanzamiento.Value = Convert.ToDateTime(grillaMangas.CurrentRow.Cells[3].EditedFormattedValue.ToString());
             txt_tomos.Text = grillaMangas.CurrentRow.Cells[4].EditedFormattedValue.ToString();
-            comboEstado.SelectedValue = Convert.ToInt32(grillaMangas.CurrentRow.Cells[6].EditedFormattedValue.ToString());
+            comboGeneros.SelectedIndex = Convert.ToInt32(grillaMangas.CurrentRow.Cells[6].EditedFormattedValue.ToString())-1;
+            txt_generos.Text = grillaMangas.CurrentRow.Cells[7].EditedFormattedValue.ToString();
+            comboEstado.SelectedIndex = Convert.ToInt32(grillaMangas.CurrentRow.Cells[8].EditedFormattedValue.ToString())-1;
         }
 
         private void pic_imagen_Click(object sender, EventArgs e)

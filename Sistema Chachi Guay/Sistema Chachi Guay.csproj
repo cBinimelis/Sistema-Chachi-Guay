@@ -81,10 +81,10 @@
     <Compile Include="Anime.Designer.cs">
       <DependentUpon>Anime.cs</DependentUpon>
     </Compile>
-    <Compile Include="bd_bibliotecaDataSet.Designer.cs">
+    <Compile Include="bd_bibliotecaDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>bd_bibliotecaDataSet.xsd</DependentUpon>
+      <DependentUpon>bd_bibliotecaDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -205,16 +205,16 @@
     <EmbeddedResource Include="SeleccionSerie.resx">
       <DependentUpon>SeleccionSerie.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="bd_bibliotecaDataSet.xsc">
-      <DependentUpon>bd_bibliotecaDataSet.xsd</DependentUpon>
+    <None Include="bd_bibliotecaDataSet1.xsc">
+      <DependentUpon>bd_bibliotecaDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="bd_bibliotecaDataSet.xsd">
+    <None Include="bd_bibliotecaDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>bd_bibliotecaDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>bd_bibliotecaDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="bd_bibliotecaDataSet.xss">
-      <DependentUpon>bd_bibliotecaDataSet.xsd</DependentUpon>
+    <None Include="bd_bibliotecaDataSet1.xss">
+      <DependentUpon>bd_bibliotecaDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

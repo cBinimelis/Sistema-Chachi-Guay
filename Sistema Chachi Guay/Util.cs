@@ -22,6 +22,7 @@ namespace Sistema_Chachi_Guay
 
     class Usuario
     {
+        private static int id_Usuario;
         private static string Nick = "";
 
         public static void setNick(String Nick)
@@ -32,6 +33,16 @@ namespace Sistema_Chachi_Guay
         public static String getNick()
         {
             return Usuario.Nick;
+        }
+
+        public static void setId(int id_Usuario)
+        {
+            Usuario.id_Usuario = id_Usuario;
+        }
+
+        public static int getId()
+        {
+            return Usuario.id_Usuario;
         }
     }
 }

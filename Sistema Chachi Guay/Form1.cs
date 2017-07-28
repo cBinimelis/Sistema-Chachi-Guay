@@ -47,6 +47,7 @@ namespace Sistema_Chachi_Guay
                         {
                             Limpiar();
                             Usuario.setNick(txt_usuario.Text);
+                            Usuario.setId(Convert.ToInt32(usuario[0].ToString()));
                             Util.setF1(this);
                             MenuCentral mc = new MenuCentral();
                             mc.Show();

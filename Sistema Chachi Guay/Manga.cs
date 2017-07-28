@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace Sistema_Chachi_Guay
 {
@@ -24,6 +25,7 @@ namespace Sistema_Chachi_Guay
         int IdManga = 0;
         bool Agregar = false;
         bool Editar = false;
+        MemoryStream ms = new MemoryStream();
 
         private void Manga_Load(object sender, EventArgs e)
         {
@@ -75,9 +77,9 @@ namespace Sistema_Chachi_Guay
             txt_sinopsis.Text = grillaMangas.CurrentRow.Cells[2].EditedFormattedValue.ToString();
             date_Lanzamiento.Value = Convert.ToDateTime(grillaMangas.CurrentRow.Cells[3].EditedFormattedValue.ToString());
             txt_tomos.Text = grillaMangas.CurrentRow.Cells[4].EditedFormattedValue.ToString();
-            comboGeneros.SelectedIndex = Convert.ToInt32(grillaMangas.CurrentRow.Cells[6].EditedFormattedValue.ToString())-1;
+            comboGeneros.SelectedIndex = Convert.ToInt32(grillaMangas.CurrentRow.Cells[6].EditedFormattedValue.ToString()) - 1;
             txt_generos.Text = grillaMangas.CurrentRow.Cells[7].EditedFormattedValue.ToString();
-            comboEstado.SelectedIndex = Convert.ToInt32(grillaMangas.CurrentRow.Cells[8].EditedFormattedValue.ToString())-1;
+            comboEstado.SelectedIndex = Convert.ToInt32(grillaMangas.CurrentRow.Cells[8].EditedFormattedValue.ToString()) - 1;
         }
 
         private void pic_imagen_Click(object sender, EventArgs e)
@@ -126,8 +128,19 @@ namespace Sistema_Chachi_Guay
             }
             else
             {
-                Agregar = false;
-                Limpiar();
+                pic_imagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                byte[] img = ms.ToArray();
+                if (sql.verificar("SELECT * FROM Manga WHERE Nombre ='" + txt_nombre.Text + "'"))
+                {
+                    MessageBox.Show("Ya existe un Manga registrado con ese nombre", "No se aceptan clones de sombra");
+                }
+                else
+                {
+                    int Guardar = sql.ejecutar("INSERT INTO Manga (Nombre, Sinopsis, Lanzamiento, Tomos, Imagen, id_GeneroManga, Otros_Generos, id_estado, id_Usuario) VALUES " +
+                        "('" + txt_nombre.Text + "','" + txt_sinopsis.Text + "','" + date_Lanzamiento.Value + "','" + txt_tomos.Text + "','" + img + "','" + comboGeneros.SelectedValue + "','" + txt_generos.Text + "','" + comboEstado.SelectedValue + "','" + Usuario.getId() + "')");
+                    Agregar = false;
+                    Limpiar();
+                }
             }
         }
 
@@ -193,7 +206,8 @@ namespace Sistema_Chachi_Guay
                 {
 
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Se ha producido un error");
             }

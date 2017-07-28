@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
+using System.IO;
+using System.Drawing;
 
 namespace Sistema_Chachi_Guay
 {
@@ -76,10 +78,30 @@ namespace Sistema_Chachi_Guay
                 DataSet ds = new DataSet();
                 adapt.Fill(ds);
                 dg.DataSource = ds.Tables[0];
-
                 con.Close();
             }
             catch { }
+        }
+
+        public void llenaImagen(PictureBox pb, String sentencia)
+        {
+            //try
+            //{
+                con.Close();
+                con.Open();
+                SqlDataAdapter adapt = new SqlDataAdapter(sentencia, con);
+                DataSet dataSet = new DataSet();
+                adapt.Fill(dataSet);
+
+                if (dataSet.Tables[0].Rows.Count == 1)
+                {
+                    Byte[] data = new Byte[0];
+                    data = (Byte[])(dataSet.Tables[0].Rows[0]["Imagen"]);
+                    MemoryStream ms = new MemoryStream(data);
+                    pb.Image = Image.FromStream(ms);
+                }
+            //}
+            //catch { }
         }
 
         public void llenaCombo(ComboBox cb, String Sentencia)

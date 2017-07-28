@@ -26,12 +26,13 @@ namespace Sistema_Chachi_Guay
         bool Agregar = false;
         bool Editar = false;
         MemoryStream ms = new MemoryStream();
+        byte[] MyImg = new byte[0];
 
         private void Manga_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'bd_bibliotecaDataSet1.vManga' Puede moverla o quitarla según sea necesario.
             this.vMangaTableAdapter.Fill(this.bd_bibliotecaDataSet1.vManga);
-            pic_imagen.ImageLocation = "./images/Libros/Dibujos/onepiece.jpg";
+            pic_imagen = null;
             sql.llenaCombo(comboEstado, "SELECT * FROM Estado");
             sql.llenaCombo(comboGeneros, "SELECT * FROM Genero_Mangas");
         }
@@ -70,6 +71,8 @@ namespace Sistema_Chachi_Guay
             txt_generos.Text = "";
             comboEstado.SelectedValue = 0;
         }
+        
+
         private void grillaMangas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             IdManga = Convert.ToInt32(grillaMangas.CurrentRow.Cells[0].EditedFormattedValue.ToString());
@@ -77,9 +80,11 @@ namespace Sistema_Chachi_Guay
             txt_sinopsis.Text = grillaMangas.CurrentRow.Cells[2].EditedFormattedValue.ToString();
             date_Lanzamiento.Value = Convert.ToDateTime(grillaMangas.CurrentRow.Cells[3].EditedFormattedValue.ToString());
             txt_tomos.Text = grillaMangas.CurrentRow.Cells[4].EditedFormattedValue.ToString();
+            sql.llenaImagen(pic_imagen, "SELECT Imagen FROM Manga Where id_Manga = '" + IdManga + "'");
             comboGeneros.SelectedIndex = Convert.ToInt32(grillaMangas.CurrentRow.Cells[6].EditedFormattedValue.ToString()) - 1;
             txt_generos.Text = grillaMangas.CurrentRow.Cells[7].EditedFormattedValue.ToString();
             comboEstado.SelectedIndex = Convert.ToInt32(grillaMangas.CurrentRow.Cells[8].EditedFormattedValue.ToString()) - 1;
+
         }
 
         private void pic_imagen_Click(object sender, EventArgs e)
@@ -128,29 +133,36 @@ namespace Sistema_Chachi_Guay
             }
             else
             {
-                pic_imagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                byte[] img = new byte[ms.Length];
-                ms.Position = 0;
-                ms.Read(img, 0, img.Length);
-                if (sql.verificar("SELECT * FROM Manga WHERE Nombre ='" + txt_nombre.Text + "'"))
+                if (pic_imagen == null)
                 {
-                    MessageBox.Show("Ya existe un Manga registrado con ese nombre", "No se aceptan clones de sombra");
+                    MessageBox.Show("Debes seleccionar una imagen", "No sea tacaño");
                 }
                 else
                 {
-                    int Guardar = sql.ejecutar("INSERT INTO Manga (Nombre, Sinopsis, Lanzamiento, Tomos, Imagen, id_GeneroManga, Otros_Generos, id_estado, id_Usuario) VALUES " +
-                        "('" + txt_nombre.Text + "','" + txt_sinopsis.Text + "','" + date_Lanzamiento.Value + "','" + txt_tomos.Text + "','" + img + "','" + (comboGeneros.SelectedIndex + 1) + "','" + txt_generos.Text + "','" + (comboEstado.SelectedIndex + 1) + "','" + Usuario.getId() + "')");
-                    if (Guardar > 0)
+                    pic_imagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    byte[] img = new byte[ms.Length];
+                    ms.Position = 0;
+                    ms.Read(img, 0, img.Length);
+                    if (sql.verificar("SELECT * FROM Manga WHERE Nombre ='" + txt_nombre.Text + "'"))
                     {
-                        MessageBox.Show("Se ha agregado exitosamente el manga","Felicidades por el vicio");
-                        Agregar = false;
-                        Limpiar();
-                        ModoNormal();
-                        Desactivar();
+                        MessageBox.Show("Ya existe un Manga registrado con ese nombre", "No se aceptan clones de sombra");
                     }
                     else
                     {
-                        MessageBox.Show("No se ha podido agregar el manga","Se pudrio todo");
+                        int Guardar = sql.ejecutar("INSERT INTO Manga (Nombre, Sinopsis, Lanzamiento, Tomos, Imagen, id_GeneroManga, Otros_Generos, id_estado, id_Usuario) VALUES " +
+                            "('" + txt_nombre.Text + "','" + txt_sinopsis.Text + "','" + date_Lanzamiento.Value + "','" + txt_tomos.Text + "','" + img + "','" + (comboGeneros.SelectedIndex + 1) + "','" + txt_generos.Text + "','" + (comboEstado.SelectedIndex + 1) + "','" + Usuario.getId() + "')");
+                        if (Guardar > 0)
+                        {
+                            MessageBox.Show("Se ha agregado exitosamente el manga", "Felicidades por el vicio");
+                            Agregar = false;
+                            Limpiar();
+                            ModoNormal();
+                            Desactivar();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se ha podido agregar el manga", "Se pudrio todo");
+                        }
                     }
                 }
             }

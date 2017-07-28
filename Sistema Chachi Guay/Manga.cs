@@ -129,7 +129,9 @@ namespace Sistema_Chachi_Guay
             else
             {
                 pic_imagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                byte[] img = ms.ToArray();
+                byte[] img = new byte[ms.Length];
+                ms.Position = 0;
+                ms.Read(img, 0, img.Length);
                 if (sql.verificar("SELECT * FROM Manga WHERE Nombre ='" + txt_nombre.Text + "'"))
                 {
                     MessageBox.Show("Ya existe un Manga registrado con ese nombre", "No se aceptan clones de sombra");
@@ -137,9 +139,19 @@ namespace Sistema_Chachi_Guay
                 else
                 {
                     int Guardar = sql.ejecutar("INSERT INTO Manga (Nombre, Sinopsis, Lanzamiento, Tomos, Imagen, id_GeneroManga, Otros_Generos, id_estado, id_Usuario) VALUES " +
-                        "('" + txt_nombre.Text + "','" + txt_sinopsis.Text + "','" + date_Lanzamiento.Value + "','" + txt_tomos.Text + "','" + img + "','" + comboGeneros.SelectedValue + "','" + txt_generos.Text + "','" + comboEstado.SelectedValue + "','" + Usuario.getId() + "')");
-                    Agregar = false;
-                    Limpiar();
+                        "('" + txt_nombre.Text + "','" + txt_sinopsis.Text + "','" + date_Lanzamiento.Value + "','" + txt_tomos.Text + "','" + img + "','" + (comboGeneros.SelectedIndex + 1) + "','" + txt_generos.Text + "','" + (comboEstado.SelectedIndex + 1) + "','" + Usuario.getId() + "')");
+                    if (Guardar > 0)
+                    {
+                        MessageBox.Show("Se ha agregado exitosamente el manga","Felicidades por el vicio");
+                        Agregar = false;
+                        Limpiar();
+                        ModoNormal();
+                        Desactivar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha podido agregar el manga","Se pudrio todo");
+                    }
                 }
             }
         }
@@ -151,8 +163,6 @@ namespace Sistema_Chachi_Guay
                 if (Agregar == true)
                 {
                     Nuevo();
-                    ModoNormal();
-                    Desactivar();
                 }
                 else
                 {

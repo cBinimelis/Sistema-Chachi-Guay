@@ -85,23 +85,27 @@ namespace Sistema_Chachi_Guay
 
         public void llenaImagen(PictureBox pb, String sentencia)
         {
-            //try
-            //{
+            try
+            {
                 con.Close();
                 con.Open();
                 SqlDataAdapter adapt = new SqlDataAdapter(sentencia, con);
                 DataSet dataSet = new DataSet();
                 adapt.Fill(dataSet);
+                int contador = dataSet.Tables[0].Rows.Count;
 
-                if (dataSet.Tables[0].Rows.Count == 1)
+                if (contador > 0)
                 {
                     Byte[] data = new Byte[0];
                     data = (Byte[])(dataSet.Tables[0].Rows[0]["Imagen"]);
                     MemoryStream ms = new MemoryStream(data);
                     pb.Image = Image.FromStream(ms);
                 }
-            //}
-            //catch { }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void llenaCombo(ComboBox cb, String Sentencia)

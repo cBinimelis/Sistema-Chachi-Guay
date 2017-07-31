@@ -23,6 +23,7 @@ namespace Sistema_Chachi_Guay
 
         //Variables
         int IdManga = 0;
+        int IdUsuario = 0;
         bool Agregar = false;
         bool Editar = false;
         MemoryStream ms = new MemoryStream();
@@ -32,7 +33,6 @@ namespace Sistema_Chachi_Guay
         {
             // TODO: esta línea de código carga datos en la tabla 'bd_bibliotecaDataSet1.vManga' Puede moverla o quitarla según sea necesario.
             this.vMangaTableAdapter.Fill(this.bd_bibliotecaDataSet1.vManga);
-            pic_imagen = null;
             sql.llenaCombo(comboEstado, "SELECT * FROM Estado");
             sql.llenaCombo(comboGeneros, "SELECT * FROM Genero_Mangas");
         }
@@ -71,7 +71,7 @@ namespace Sistema_Chachi_Guay
             txt_generos.Text = "";
             comboEstado.SelectedValue = 0;
         }
-        
+
 
         private void grillaMangas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -84,16 +84,23 @@ namespace Sistema_Chachi_Guay
             comboGeneros.SelectedIndex = Convert.ToInt32(grillaMangas.CurrentRow.Cells[6].EditedFormattedValue.ToString()) - 1;
             txt_generos.Text = grillaMangas.CurrentRow.Cells[7].EditedFormattedValue.ToString();
             comboEstado.SelectedIndex = Convert.ToInt32(grillaMangas.CurrentRow.Cells[8].EditedFormattedValue.ToString()) - 1;
-
         }
+
 
         private void pic_imagen_Click(object sender, EventArgs e)
         {
-            DialogResult result = op.ShowDialog();
-            op.Title = "Busqueda de Imagen";
-            op.Filter = "jpg files (*.jpg) | *.jpg";
+            try
             {
-                pic_imagen.Image = new Bitmap(op.FileName);
+                op.Title = "Busqueda de Imagen";
+                op.Filter = "jpg files (*.jpg) | *.jpg";
+                if (op.ShowDialog() == DialogResult.OK)
+                {
+                    pic_imagen.Image = new Bitmap(op.FileName);
+                }
+            }
+            catch
+            {
+
             }
         }
 
@@ -122,7 +129,40 @@ namespace Sistema_Chachi_Guay
 
         private void Modificar()
         {
+            if (txt_nombre.Text.Trim().Equals("") || txt_sinopsis.Text.Trim().Equals("") || txt_tomos.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("No puedes dejar campos vacios", "¡Detengase ahí COMPAÑERO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (pic_imagen == null)
+                {
+                    MessageBox.Show("Debes seleccionar una imagen", "No sea tacaño");
+                }
+                else
+                {
+                    Image img = pic_imagen.Image;
+                    byte[] arr;
+                    ImageConverter converter = new ImageConverter();
+                    arr = (byte[])converter.ConvertTo(img, typeof(byte[]));
 
+                    int Guardar = sql.ejecutar("UPDATE Manga SET" +
+                        " Nombre = '" + txt_nombre.Text + "', Sinopsis = '" + txt_sinopsis.Text + "', Lanzamiento = '" + date_Lanzamiento.Value + "', Tomos = '" + txt_tomos.Text + "' , Imagen = '" + arr + "', id_GeneroManga = '" + (comboGeneros.SelectedIndex + 1) + "', Otros_Generos = '" + txt_generos.Text + "', id_estado = '" + (comboEstado.SelectedIndex + 1) + "'" +
+                        "WHERE id_Manga = " + IdManga);
+                    if (Guardar > 0)
+                    {
+                        MessageBox.Show("Se ha actualizado exitosamente el manga", "Felicidades por el vicio");
+                        Editar = false;
+                        Limpiar();
+                        ModoNormal();
+                        Desactivar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha podido actualizar el manga", "Se pudrio todo");
+                    }
+                }
+            }
         }
 
         private void Nuevo()
@@ -178,10 +218,17 @@ namespace Sistema_Chachi_Guay
                 }
                 else
                 {
-                    Agregar = true;
-                    Limpiar();
-                    Activar();
-                    ModoAgregar();
+                    if (Editar == true)
+                    {
+                        Modificar();
+                    }
+                    else
+                    {
+                        Agregar = true;
+                        Limpiar();
+                        Activar();
+                        ModoAgregar();
+                    }
                 }
             }
             catch (Exception ex)
@@ -192,26 +239,9 @@ namespace Sistema_Chachi_Guay
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (Editar == true)
-                {
-                    Modificar();
-                    ModoNormal();
-                    Desactivar();
-                }
-                else
-                {
-                    Editar = true;
-                    Limpiar();
-                    Activar();
-                    ModoAgregar();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Se ha producido un problema");
-            }
+            Editar = true;
+            Activar();
+            ModoAgregar();
         }
 
         private void btn_delete_Click(object sender, EventArgs e)

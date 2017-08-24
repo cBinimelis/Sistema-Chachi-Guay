@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Anime));
             this.label8 = new System.Windows.Forms.Label();
             this.comboGeneros = new System.Windows.Forms.ComboBox();
@@ -51,8 +52,25 @@
             this.grillaAnime = new System.Windows.Forms.DataGridView();
             this.txt_temporadas = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.bd_bibliotecaDataSet = new Sistema_Chachi_Guay.bd_bibliotecaDataSet();
+            this.vAnimeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vAnimeTableAdapter = new Sistema_Chachi_Guay.bd_bibliotecaDataSetTableAdapters.vAnimeTableAdapter();
+            this.idAnimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sinopsisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lanzamientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.temporadasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.capitulosTotalesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imagenDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.idGeneroMangaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.otrosGenerosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idestadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nickDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pic_imagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaAnime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bd_bibliotecaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vAnimeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -250,7 +268,22 @@
             // 
             this.grillaAnime.AllowUserToAddRows = false;
             this.grillaAnime.AllowUserToDeleteRows = false;
+            this.grillaAnime.AutoGenerateColumns = false;
             this.grillaAnime.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaAnime.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idAnimeDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.sinopsisDataGridViewTextBoxColumn,
+            this.lanzamientoDataGridViewTextBoxColumn,
+            this.temporadasDataGridViewTextBoxColumn,
+            this.capitulosTotalesDataGridViewTextBoxColumn,
+            this.imagenDataGridViewImageColumn,
+            this.idGeneroMangaDataGridViewTextBoxColumn,
+            this.otrosGenerosDataGridViewTextBoxColumn,
+            this.idestadoDataGridViewTextBoxColumn,
+            this.idUsuarioDataGridViewTextBoxColumn,
+            this.nickDataGridViewTextBoxColumn});
+            this.grillaAnime.DataSource = this.vAnimeBindingSource;
             this.grillaAnime.Location = new System.Drawing.Point(12, 12);
             this.grillaAnime.Name = "grillaAnime";
             this.grillaAnime.ReadOnly = true;
@@ -273,6 +306,115 @@
             this.label9.Size = new System.Drawing.Size(75, 13);
             this.label9.TabIndex = 71;
             this.label9.Text = "Temporadas : ";
+            // 
+            // bd_bibliotecaDataSet
+            // 
+            this.bd_bibliotecaDataSet.DataSetName = "bd_bibliotecaDataSet";
+            this.bd_bibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vAnimeBindingSource
+            // 
+            this.vAnimeBindingSource.DataMember = "vAnime";
+            this.vAnimeBindingSource.DataSource = this.bd_bibliotecaDataSet;
+            // 
+            // vAnimeTableAdapter
+            // 
+            this.vAnimeTableAdapter.ClearBeforeFill = true;
+            // 
+            // idAnimeDataGridViewTextBoxColumn
+            // 
+            this.idAnimeDataGridViewTextBoxColumn.DataPropertyName = "id_Anime";
+            this.idAnimeDataGridViewTextBoxColumn.HeaderText = "id_Anime";
+            this.idAnimeDataGridViewTextBoxColumn.Name = "idAnimeDataGridViewTextBoxColumn";
+            this.idAnimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idAnimeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sinopsisDataGridViewTextBoxColumn
+            // 
+            this.sinopsisDataGridViewTextBoxColumn.DataPropertyName = "Sinopsis";
+            this.sinopsisDataGridViewTextBoxColumn.HeaderText = "Sinopsis";
+            this.sinopsisDataGridViewTextBoxColumn.Name = "sinopsisDataGridViewTextBoxColumn";
+            this.sinopsisDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sinopsisDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // lanzamientoDataGridViewTextBoxColumn
+            // 
+            this.lanzamientoDataGridViewTextBoxColumn.DataPropertyName = "Lanzamiento";
+            this.lanzamientoDataGridViewTextBoxColumn.HeaderText = "Lanzamiento";
+            this.lanzamientoDataGridViewTextBoxColumn.Name = "lanzamientoDataGridViewTextBoxColumn";
+            this.lanzamientoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lanzamientoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // temporadasDataGridViewTextBoxColumn
+            // 
+            this.temporadasDataGridViewTextBoxColumn.DataPropertyName = "Temporadas";
+            this.temporadasDataGridViewTextBoxColumn.HeaderText = "Temporadas";
+            this.temporadasDataGridViewTextBoxColumn.Name = "temporadasDataGridViewTextBoxColumn";
+            this.temporadasDataGridViewTextBoxColumn.ReadOnly = true;
+            this.temporadasDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // capitulosTotalesDataGridViewTextBoxColumn
+            // 
+            this.capitulosTotalesDataGridViewTextBoxColumn.DataPropertyName = "CapitulosTotales";
+            this.capitulosTotalesDataGridViewTextBoxColumn.HeaderText = "CapitulosTotales";
+            this.capitulosTotalesDataGridViewTextBoxColumn.Name = "capitulosTotalesDataGridViewTextBoxColumn";
+            this.capitulosTotalesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.capitulosTotalesDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // imagenDataGridViewImageColumn
+            // 
+            this.imagenDataGridViewImageColumn.DataPropertyName = "Imagen";
+            this.imagenDataGridViewImageColumn.HeaderText = "Imagen";
+            this.imagenDataGridViewImageColumn.Name = "imagenDataGridViewImageColumn";
+            this.imagenDataGridViewImageColumn.ReadOnly = true;
+            this.imagenDataGridViewImageColumn.Visible = false;
+            // 
+            // idGeneroMangaDataGridViewTextBoxColumn
+            // 
+            this.idGeneroMangaDataGridViewTextBoxColumn.DataPropertyName = "id_GeneroManga";
+            this.idGeneroMangaDataGridViewTextBoxColumn.HeaderText = "id_GeneroManga";
+            this.idGeneroMangaDataGridViewTextBoxColumn.Name = "idGeneroMangaDataGridViewTextBoxColumn";
+            this.idGeneroMangaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idGeneroMangaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // otrosGenerosDataGridViewTextBoxColumn
+            // 
+            this.otrosGenerosDataGridViewTextBoxColumn.DataPropertyName = "Otros_Generos";
+            this.otrosGenerosDataGridViewTextBoxColumn.HeaderText = "Otros_Generos";
+            this.otrosGenerosDataGridViewTextBoxColumn.Name = "otrosGenerosDataGridViewTextBoxColumn";
+            this.otrosGenerosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.otrosGenerosDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idestadoDataGridViewTextBoxColumn
+            // 
+            this.idestadoDataGridViewTextBoxColumn.DataPropertyName = "id_estado";
+            this.idestadoDataGridViewTextBoxColumn.HeaderText = "id_estado";
+            this.idestadoDataGridViewTextBoxColumn.Name = "idestadoDataGridViewTextBoxColumn";
+            this.idestadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idestadoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idUsuarioDataGridViewTextBoxColumn
+            // 
+            this.idUsuarioDataGridViewTextBoxColumn.DataPropertyName = "id_Usuario";
+            this.idUsuarioDataGridViewTextBoxColumn.HeaderText = "id_Usuario";
+            this.idUsuarioDataGridViewTextBoxColumn.Name = "idUsuarioDataGridViewTextBoxColumn";
+            this.idUsuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idUsuarioDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nickDataGridViewTextBoxColumn
+            // 
+            this.nickDataGridViewTextBoxColumn.DataPropertyName = "Nick";
+            this.nickDataGridViewTextBoxColumn.HeaderText = "Nick";
+            this.nickDataGridViewTextBoxColumn.Name = "nickDataGridViewTextBoxColumn";
+            this.nickDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Anime
             // 
@@ -309,6 +451,8 @@
             this.Load += new System.EventHandler(this.Anime_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_imagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaAnime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bd_bibliotecaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vAnimeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,5 +482,20 @@
         private System.Windows.Forms.DataGridView grillaAnime;
         private System.Windows.Forms.TextBox txt_temporadas;
         private System.Windows.Forms.Label label9;
+        private bd_bibliotecaDataSet bd_bibliotecaDataSet;
+        private System.Windows.Forms.BindingSource vAnimeBindingSource;
+        private bd_bibliotecaDataSetTableAdapters.vAnimeTableAdapter vAnimeTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAnimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sinopsisDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lanzamientoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn temporadasDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn capitulosTotalesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn imagenDataGridViewImageColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idGeneroMangaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn otrosGenerosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idestadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nickDataGridViewTextBoxColumn;
     }
 }

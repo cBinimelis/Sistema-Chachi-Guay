@@ -22,6 +22,8 @@ namespace Sistema_Chachi_Guay
 
         private void Anime_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'bd_bibliotecaDataSet.vAnime' Puede moverla o quitarla según sea necesario.
+            this.vAnimeTableAdapter.Fill(this.bd_bibliotecaDataSet.vAnime);
 
         }
 

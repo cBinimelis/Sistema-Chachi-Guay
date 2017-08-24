@@ -81,6 +81,11 @@
     <Compile Include="Anime.Designer.cs">
       <DependentUpon>Anime.cs</DependentUpon>
     </Compile>
+    <Compile Include="bd_bibliotecaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bd_bibliotecaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="bd_bibliotecaDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -205,6 +210,17 @@
     <EmbeddedResource Include="SeleccionSerie.resx">
       <DependentUpon>SeleccionSerie.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bd_bibliotecaDataSet.xsc">
+      <DependentUpon>bd_bibliotecaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bd_bibliotecaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bd_bibliotecaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bd_bibliotecaDataSet.xss">
+      <DependentUpon>bd_bibliotecaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="bd_bibliotecaDataSet1.xsc">
       <DependentUpon>bd_bibliotecaDataSet1.xsd</DependentUpon>
     </None>

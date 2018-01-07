@@ -121,7 +121,7 @@
             this.grillaMangas.Location = new System.Drawing.Point(12, 12);
             this.grillaMangas.Name = "grillaMangas";
             this.grillaMangas.ReadOnly = true;
-            this.grillaMangas.Size = new System.Drawing.Size(270, 479);
+            this.grillaMangas.Size = new System.Drawing.Size(270, 680);
             this.grillaMangas.TabIndex = 22;
             this.grillaMangas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillaMangas_CellClick);
             // 
@@ -225,7 +225,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(288, 233);
+            this.label5.Location = new System.Drawing.Point(288, 434);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 13);
             this.label5.TabIndex = 32;
@@ -234,7 +234,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(288, 286);
+            this.label7.Location = new System.Drawing.Point(288, 487);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 13);
             this.label7.TabIndex = 33;
@@ -254,13 +254,13 @@
             this.txt_sinopsis.Location = new System.Drawing.Point(380, 105);
             this.txt_sinopsis.Multiline = true;
             this.txt_sinopsis.Name = "txt_sinopsis";
-            this.txt_sinopsis.Size = new System.Drawing.Size(211, 67);
+            this.txt_sinopsis.Size = new System.Drawing.Size(211, 268);
             this.txt_sinopsis.TabIndex = 35;
             // 
             // txt_generos
             // 
             this.txt_generos.Enabled = false;
-            this.txt_generos.Location = new System.Drawing.Point(380, 257);
+            this.txt_generos.Location = new System.Drawing.Point(380, 458);
             this.txt_generos.Name = "txt_generos";
             this.txt_generos.Size = new System.Drawing.Size(211, 20);
             this.txt_generos.TabIndex = 38;
@@ -274,7 +274,7 @@
             this.btn_edit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
             this.btn_edit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.btn_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_edit.Location = new System.Drawing.Point(12, 497);
+            this.btn_edit.Location = new System.Drawing.Point(12, 698);
             this.btn_edit.Name = "btn_edit";
             this.btn_edit.Size = new System.Drawing.Size(60, 60);
             this.btn_edit.TabIndex = 41;
@@ -291,7 +291,7 @@
             this.btn_new.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
             this.btn_new.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.btn_new.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_new.Location = new System.Drawing.Point(78, 497);
+            this.btn_new.Location = new System.Drawing.Point(78, 698);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(138, 60);
             this.btn_new.TabIndex = 42;
@@ -308,7 +308,7 @@
             this.btn_delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
             this.btn_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_delete.Location = new System.Drawing.Point(222, 497);
+            this.btn_delete.Location = new System.Drawing.Point(222, 698);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(60, 60);
             this.btn_delete.TabIndex = 43;
@@ -318,7 +318,7 @@
             // 
             // pic_imagen
             // 
-            this.pic_imagen.Location = new System.Drawing.Point(288, 310);
+            this.pic_imagen.Location = new System.Drawing.Point(288, 511);
             this.pic_imagen.Name = "pic_imagen";
             this.pic_imagen.Size = new System.Drawing.Size(303, 247);
             this.pic_imagen.TabIndex = 44;
@@ -329,7 +329,7 @@
             // 
             this.comboEstado.Enabled = false;
             this.comboEstado.FormattingEnabled = true;
-            this.comboEstado.Location = new System.Drawing.Point(380, 283);
+            this.comboEstado.Location = new System.Drawing.Point(380, 484);
             this.comboEstado.Name = "comboEstado";
             this.comboEstado.Size = new System.Drawing.Size(211, 21);
             this.comboEstado.TabIndex = 45;
@@ -337,7 +337,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(288, 207);
+            this.label4.Location = new System.Drawing.Point(288, 408);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 26;
@@ -346,7 +346,7 @@
             // txt_tomos
             // 
             this.txt_tomos.Enabled = false;
-            this.txt_tomos.Location = new System.Drawing.Point(380, 204);
+            this.txt_tomos.Location = new System.Drawing.Point(380, 405);
             this.txt_tomos.Name = "txt_tomos";
             this.txt_tomos.Size = new System.Drawing.Size(211, 20);
             this.txt_tomos.TabIndex = 39;
@@ -354,7 +354,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(288, 178);
+            this.label6.Location = new System.Drawing.Point(288, 379);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 13);
             this.label6.TabIndex = 46;
@@ -362,7 +362,8 @@
             // 
             // date_Lanzamiento
             // 
-            this.date_Lanzamiento.Location = new System.Drawing.Point(380, 178);
+            this.date_Lanzamiento.Enabled = false;
+            this.date_Lanzamiento.Location = new System.Drawing.Point(380, 379);
             this.date_Lanzamiento.Name = "date_Lanzamiento";
             this.date_Lanzamiento.Size = new System.Drawing.Size(211, 20);
             this.date_Lanzamiento.TabIndex = 48;
@@ -371,7 +372,7 @@
             // 
             this.comboGeneros.Enabled = false;
             this.comboGeneros.FormattingEnabled = true;
-            this.comboGeneros.Location = new System.Drawing.Point(380, 230);
+            this.comboGeneros.Location = new System.Drawing.Point(380, 431);
             this.comboGeneros.Name = "comboGeneros";
             this.comboGeneros.Size = new System.Drawing.Size(211, 21);
             this.comboGeneros.TabIndex = 49;
@@ -379,7 +380,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(288, 260);
+            this.label8.Location = new System.Drawing.Point(288, 461);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(81, 13);
             this.label8.TabIndex = 50;
@@ -394,7 +395,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(603, 569);
+            this.ClientSize = new System.Drawing.Size(603, 770);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.comboGeneros);
             this.Controls.Add(this.date_Lanzamiento);

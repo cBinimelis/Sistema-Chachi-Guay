@@ -30,15 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pendientes));
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.btn_new = new System.Windows.Forms.Button();
+            this.btn_edit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,22 +50,6 @@
             this.label3.Size = new System.Drawing.Size(226, 58);
             this.label3.TabIndex = 2;
             this.label3.Text = "Pendientes";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(333, 410);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(59, 50);
-            this.pictureBox3.TabIndex = 29;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(463, 410);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(59, 50);
-            this.pictureBox2.TabIndex = 28;
-            this.pictureBox2.TabStop = false;
             // 
             // label1
             // 
@@ -112,16 +95,68 @@
             this.textBox1.Size = new System.Drawing.Size(192, 20);
             this.textBox1.TabIndex = 31;
             // 
+            // btn_delete
+            // 
+            this.btn_delete.BackColor = System.Drawing.Color.LightCyan;
+            this.btn_delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_delete.FlatAppearance.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_delete.FlatAppearance.BorderSize = 3;
+            this.btn_delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
+            this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_delete.Location = new System.Drawing.Point(502, 406);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(60, 60);
+            this.btn_delete.TabIndex = 67;
+            this.btn_delete.Text = "Borrar";
+            this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // btn_new
+            // 
+            this.btn_new.BackColor = System.Drawing.Color.LightCyan;
+            this.btn_new.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_new.FlatAppearance.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_new.FlatAppearance.BorderSize = 3;
+            this.btn_new.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_new.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
+            this.btn_new.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_new.Location = new System.Drawing.Point(358, 406);
+            this.btn_new.Name = "btn_new";
+            this.btn_new.Size = new System.Drawing.Size(138, 60);
+            this.btn_new.TabIndex = 66;
+            this.btn_new.Text = "Agregar Anime";
+            this.btn_new.UseVisualStyleBackColor = false;
+            this.btn_new.Click += new System.EventHandler(this.btn_new_Click);
+            // 
+            // btn_edit
+            // 
+            this.btn_edit.BackColor = System.Drawing.Color.LightCyan;
+            this.btn_edit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_edit.FlatAppearance.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_edit.FlatAppearance.BorderSize = 3;
+            this.btn_edit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_edit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
+            this.btn_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_edit.Location = new System.Drawing.Point(292, 406);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(60, 60);
+            this.btn_edit.TabIndex = 65;
+            this.btn_edit.Text = "Editar";
+            this.btn_edit.UseVisualStyleBackColor = false;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
+            // 
             // Pendientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCoral;
             this.ClientSize = new System.Drawing.Size(582, 498);
+            this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.btn_new);
+            this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
@@ -133,8 +168,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pendientes";
             this.Load += new System.EventHandler(this.Pendientes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -143,12 +176,13 @@
 
         #endregion
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.Button btn_new;
+        private System.Windows.Forms.Button btn_edit;
     }
 }

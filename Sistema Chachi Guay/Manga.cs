@@ -31,6 +31,11 @@ namespace Sistema_Chachi_Guay
 
         private void Manga_Load(object sender, EventArgs e)
         {
+            llenaTabla();
+        }
+
+        private void llenaTabla()
+        {
             // TODO: esta línea de código carga datos en la tabla 'bd_bibliotecaDataSet1.vManga' Puede moverla o quitarla según sea necesario.
             this.vMangaTableAdapter.Fill(this.bd_bibliotecaDataSet1.vManga);
             sql.llenaCombo(comboEstado, "SELECT * FROM Estado");
@@ -80,7 +85,7 @@ namespace Sistema_Chachi_Guay
             txt_sinopsis.Text = grillaMangas.CurrentRow.Cells[2].EditedFormattedValue.ToString();
             date_Lanzamiento.Value = Convert.ToDateTime(grillaMangas.CurrentRow.Cells[3].EditedFormattedValue.ToString());
             txt_tomos.Text = grillaMangas.CurrentRow.Cells[4].EditedFormattedValue.ToString();
-            sql.llenaImagen(pic_imagen, "SELECT Imagen FROM Manga Where id_Manga = '" + IdManga + "'");
+            //sql.llenaImagen(pic_imagen, "SELECT Imagen FROM Manga Where id_Manga = '" + IdManga + "'");
             comboGeneros.SelectedIndex = Convert.ToInt32(grillaMangas.CurrentRow.Cells[6].EditedFormattedValue.ToString()) - 1;
             txt_generos.Text = grillaMangas.CurrentRow.Cells[7].EditedFormattedValue.ToString();
             comboEstado.SelectedIndex = Convert.ToInt32(grillaMangas.CurrentRow.Cells[8].EditedFormattedValue.ToString()) - 1;
@@ -152,6 +157,7 @@ namespace Sistema_Chachi_Guay
                     if (Guardar > 0)
                     {
                         MessageBox.Show("Se ha actualizado exitosamente el manga", "Felicidades por el vicio");
+                        llenaTabla();
                         Editar = false;
                         Limpiar();
                         ModoNormal();
